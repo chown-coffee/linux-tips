@@ -25,6 +25,6 @@ chattr -[letra do atributo] [arquivo(s)]
 		chattr -i arquivo
 	* o parametro -R, remove o atributo recursivamente
 
-chattr -[atributo(s)] [arquivo(s)]
+chattr +[atributo(s)] [arquivo(s)]
 	* insere o(s) atributo(s) especificados a todos os arquivos e/ou diretórios especificados
 	* remove todos os outros atributos que não foram especificados (caso o(s) arquivo(s) ou diretório(s) os possuam)

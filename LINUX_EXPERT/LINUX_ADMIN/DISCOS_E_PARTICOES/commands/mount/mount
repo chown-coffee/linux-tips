@@ -8,6 +8,9 @@ mount -o remount,rw [partićão]
 	# o rw [read & write], permite que o sistema de arquivos seja montado como leitura e gravaćão
 	# caso fosse passada a općão ro [read only], o sistema de arquivos seria montado apenas como leitura
 
+mount -o remount,ro [partićão]
+	# remonta uma partićão como read only (apenas leitura)
+
 umount [partićão]
 	# faz a desmontagem de uma determinada partićão
 

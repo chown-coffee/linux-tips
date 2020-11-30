@@ -10,12 +10,16 @@
 
 # options -> refere-se as općões de montagem com relaćão a partićão
 	## defaults --> općões padrão
-	## noatime --> não será salvo o tempo de acesso aos arquivos (o que impede dos mesmos serem atualizados a todo momento)
+	## noatime --> não será salvo o tempo de acesso (access time) aos arquivos (o que impede dos mesmos serem atualizados a todo momento)
 		### É interessante para partićões que sofrem constantes atualizaćões, impedindo a queda de performance
 	## nodiratime --> mesmo conceito de noatime, porém servindo agora para diretórios ao invés de arquivos
+	## norelatime --> mesma conceito no noatime, porém com funcionamento para inodes. É interessante, utilizar o norelatime, quando se utiliza o noatime
 	## noexec --> impede a execućão de binários dentro da partićão (até mesmo para usuário root)
 	## nosuid -->
 	## nodev --> não se pode criar nenhu dispositivo dentro da partićão
+	## sync --> no momento que se manda salvar algo, é automaticamente salvo no disco, não fica em cache. Garante um salvamento rígido, porém pode se perder na performance e até mesmo diminuir o tempo de vida útil do disco, caso seja uma partićão que sofre muitas alteraćões
+	## commit=[tempo em segundos] --> aumenta o tempo que um arquivo salvo fica em cache, antes de ser devidamente salvo no disco. É interessante ao ponto que diminui o acesso constante ao disco, assim como se houverem muitos salvamentos naquele mesmo arquivo durante esse tempo, apenas o salvamento final será devidamente escrito no disco. Porém, se der algum problema na máquina, no tempo em que os arquivos ainda estiverem em cache, é perigoso perder-se os dados do mesmo
+	## errors=remount-ro --> Caso o sistema dê algum erro, ele será remontado apenas como leitura (read only)
 
 # dump -> permite fazer backup do sistema de arquivos em formato dump e armazenar em um arquivo de saída (muito pouco utilizado atualmente)
 
@@ -31,3 +35,17 @@
 
 <file system>  <mount point>  <type>  <options>  <dump>  <pass>
 /dev/sda1      /boot          vfat    defaults   0       1
+
+# Atualmente, ao invés da utilizaćão da partićão em si (/dev/sda1), é muito utilizado o UUID da mesma, que é um ID único que referencia a partićão, impedindo problemas com troca de posićão do disco na máquina, por exemplo
+
+## EXEMPLO DE FSTAB COM UUID ##
+
+<file system>  <mount point>  <type>  <options>  <dump>  <pass>
+UUID=26a00ef5-4d7c-4ef7-9789-759effa6be4d     /boot          vfat    defaults   0       1
+
+# outra forma de identificar um disco no arquivo fstab é pelo LABEL, que nada mais é que um nome dado a partićão
+
+## EXEMPLO DE FSTAB COM LABEL ##
+
+<file system>  <mount point>  <type>  <options>  <dump>  <pass>
+LABEL=var		/var          ext4    defaults   0       1

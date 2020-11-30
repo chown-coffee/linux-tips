@@ -1,0 +1,30 @@
+tune2fs -L [nome do Label] [partićão]
+	* muda o nome do label da partićão especificada
+
+tune2fs -c 10 [partićão]
+	* muda o maximal mount count da partićão especificada
+	* o maximal mount count indica quantas vezes a partićão será montada no sistema antes de ser feita uma checagem de saúde do disco
+	* no exemplo acima, depois de 10 montagens, será feito um fsck (checagem de saúde do disco)
+
+tune2fs -i 180 [partićão]
+	* muda a quantidade em dias do quanto um disco ficará ativo sem ser checado (fsck)
+	* no caso acima, foi especificado 180 dias
+	* Isso é muito útil para servidores, que podem passar meses sem serem restartados
+
+tune2fs -e remount-ro [partićão]
+	* especifica a aćão que será feita caso ocorra um erro no sistema enquanto o mesmo estiver em execućão
+	* no caso acima, foi especificado que o sistema será remontado como apenas leitura (read only)
+
+tune2fs -m [númer da porcentagem] [partićão]
+	* muda a porcentagem de blocos reservados na partićão para utilizaćão do root (esses blocos são reservados para manutenćão/recuperaćão de arquivos)
+	* por padrão, são reservados 5% de blocos da partićão para esse uso
+	* o comando acima, permite mudar essa porcentagem
+	* para partićões grandes (acima de 20G), é interessante diminuir esse número para 1% ou menos. Exemplo: tune2fs -m 1 /dev/sda2
+
+tune2fs -O ^has_journal [partićão]
+	* remove a općão de journal na partićão especificada (sendo uma partićão ext4)
+	* assim, a partićão passa a atuar como uma ext2, porém com uma seguranća muito maior
+	* sem o journal, você não tem recuperaćão de arquivos automática do journaling, porém há uma melhora considerável de performance na utilizaćão, principalmente em ambiente de clouds gigantescos (google, amazon e etc.)
+
+tune2fs -O has_journal [partićão]
+	* adiciona a općão de journal na partićão especificada

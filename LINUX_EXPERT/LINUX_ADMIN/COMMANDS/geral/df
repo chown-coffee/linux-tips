@@ -25,3 +25,6 @@ df -T
 
 df -P
 	* traz a saída em formato Posix
+
+df -t [tipo de partićão]
+	* permite especificar um tipo de partićão, fazendo com que o comando traga apenas partićões do tipo especificado

@@ -1,0 +1,11 @@
+mkfs.[tipo de sistema de arquivo] [partićão]
+	* formata a partićão especificada com o tipo especificado
+	* exemplo: mkfs.ext4 /dev/sda3
+
+mkfs.[tipo de sistema de arquivo] -T [tipo de block] [partićão]
+	* a flag -T, permite especificar o isize
+	* exemplo: mkfs.ext4 -T news /dev/sda2
+
+mkfs.[tipo de sistema de arquivo] -b [block size] [partićão]
+	* a flag -b permite mudar o block size para o tamanho especificado
+	* diferente da flag -T, a flag -b não muda o tipo de bloco como um todo, mas sim apenas um atributo específico, no caso, o tamanho do bloco

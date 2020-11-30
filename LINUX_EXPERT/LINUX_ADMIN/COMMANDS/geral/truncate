@@ -1,0 +1,4 @@
+truncate -s [tamanho] [nome do arquivo]
+	* cria um arquivo, com uma capacidade máxima especificada
+	# exemplo: truncate -s 1G teste.img
+	* não será ocupado sempre a capacidade descrita, por exemplo, no caso acima, é criado um arquivo com o truncate de um tamanho máximo de 1G, porém, como o arquivo está vazio, ele só ocupará o mínimo de espaćo do sistema (o que depende do tipo de bloco usado)

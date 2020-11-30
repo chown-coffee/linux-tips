@@ -1,0 +1,5 @@
+blkid [partićão]
+	* mostra o UUID, BLOCK_SIZE, TYPE e PARTUUID da partićão que está sendo utilizada
+
+blkid -s UUID [partićão]
+	* mostra o apenas o UUID da partićão especificada
