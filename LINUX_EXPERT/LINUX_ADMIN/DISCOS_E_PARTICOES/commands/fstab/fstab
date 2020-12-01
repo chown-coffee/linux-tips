@@ -13,7 +13,7 @@
 	## noatime --> não será salvo o tempo de acesso (access time) aos arquivos (o que impede dos mesmos serem atualizados a todo momento)
 		### É interessante para partićões que sofrem constantes atualizaćões, impedindo a queda de performance
 	## nodiratime --> mesmo conceito de noatime, porém servindo agora para diretórios ao invés de arquivos
-	## norelatime --> mesma conceito no noatime, porém com funcionamento para inodes. É interessante, utilizar o norelatime, quando se utiliza o noatime
+	## norelatime --> mesmo conceito no noatime, porém com funcionamento para inodes. É interessante, utilizar o norelatime, quando se utiliza o noatime
 	## noexec --> impede a execućão de binários dentro da partićão (até mesmo para usuário root)
 	## nosuid -->
 	## nodev --> não se pode criar nenhu dispositivo dentro da partićão
