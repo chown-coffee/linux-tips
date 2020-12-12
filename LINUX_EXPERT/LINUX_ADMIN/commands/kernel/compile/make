@@ -1,0 +1,27 @@
+<compile1>
+
+	make menuconfig
+		* abre o menu para selećão do que será (ou não) compilado
+
+	make
+		* compila o kernel
+
+</compile1>
+
+<troubleshooting>
+
+	make clean
+
+	make mrproper
+
+</troubleshooting>
+
+<compile2>
+
+	make bzImage
+
+	make modules
+
+	make modules install
+
+</compile2>

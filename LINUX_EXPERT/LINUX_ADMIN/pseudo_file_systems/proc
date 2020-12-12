@@ -1,0 +1,21 @@
+/proc é um pseud sistema de arquivos localizado na raiz do sistema
+
+Nele, é possível identificar o status de cada processo, o status de dispositivos, assim como uma visão de como a máquina está operando em nível de hardware e também da execućão dos processos
+
+Antigamente o sistema linux utilizava apenas o /proc, mas o sistema linux cresceu tanto, que logo foi adicionado o /sys, como outro dispositivo virtual
+
+Atualmente, portanto, o /proc trabalha com a parte básica de hardwares, interrupćões e processos que estão em execućão
+
+-------------
+
+cmdline --> comandos do prompt utilizados no processo
+
+environ --> arquivo que contém as variáveis de ambiente utilizadas no processo
+
+status  --> contém status da execućão do processo (status de memória, alocaćão, status atual, grupos, rssize de memória e etc.)
+
+acpi    --> gerência de recursos de interrupćões
+
+cpuinfo --> trás dados sobre a cpu que está rodando na máquina
+
+meminfo --> trás dados sobre a memória que está rodando na máquina

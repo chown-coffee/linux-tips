@@ -1,0 +1,4 @@
+/sys, assim como o /proc, é um pseudo sistema de arquivos do linux.
+Com o crescimento do linux, foi preciso criar o /sys para não sobrecarregar o /proc
+
+O /sys está mais relacionado a informaćões de dispositivo do sistema
