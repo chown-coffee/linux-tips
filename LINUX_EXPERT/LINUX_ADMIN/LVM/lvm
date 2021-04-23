@@ -1,0 +1,64 @@
+------- ------ -------
+logical volume manager
+------- ------ -------
+
+permite gerenciar partições, aumentando ou diminuindo o tamanho das mesmas de forma fácil e dinâmica.
+
+o LVM é dividido em três camadas:
+	volume físico --> a partição física criada, não pode ser alterada.
+	grupo de volume --> camada virtual que pode conter diversos volumes físicos. É uma camada alterável, pode-se adicionar e/ou remover discos da mesma.
+	volume lógico --> refere-se ao disco enxergado pelo sistema.
+
+nome do pacote de instalação: lvm2
+
+para utilização do lvm, é importante que as partições estejam formatadas como `linux LVM`
+
+-------
+
+pvcreate /dev/sdxN
+	--> criar um novo volume físico em uma partição LVM:
+
+pvdisplay
+	--> listar os volumes físicos de forma detalhada:
+
+pvs
+	--> listar os volumes físicos de forma resumida:
+
+vgcreate [nome_do_grupo] [dispositivos físicos que fazem parte do grupo]
+	--> é criado um novo grupo de volume
+	--> ex: vgcreate vg-lain /dev/sda4 /dev/sda5
+
+vgdisplay
+	--> lista os grupos de volumes criados de forma detalhada
+
+vgs
+	--> mostra de forma resumida os grupos de volumes
+
+vgextend [nome do grupo] [partição]
+	--> extende o tamanho do grupo de volume com uma nova partição
+
+lvcreate -n [nome da partição] -L [tamanho da partição] [grupo de volume que será usado]
+	--> ex: lvcreate -n iwasawa -L 2G vg-lain
+
+lvdisplay
+	--> lista de forma detalhada os volumes lógicos criados
+
+lvs
+	--> lista de forma resumida os volumes lógicos de uma partição
+
+* a formatação funciona de forma parecida com a de uma partição normal
+* exemplo de formatação para ext4 do LVM criado acima (volume group: vg-lain, logical volume: iwasawa)
+
+mkfs.ext4 /dev/vg-lain/iwasawa
+
+* a montagem também funciona de maneira idêntica:
+mount /dev/vg-lain/iwasawa /caminho/da/montagem
+
+lvextend -L [tamanho ou +tamanho] [partição]
+	--> modifica o tamanho da partição LVM
+	--> ex: lvextend -L +500M /dev/vg-lain/iwasawa
+	--> o lvextend aumenta o tamanho da partição, mas será também necessário aumentar o tamanho do sistema de arquivo presente na mesma
+
+resize2fs [partição]
+	--> realiza o ajuste do sistema de arquivo extN dentro de uma partição especificada
+	--> é verificado que o tamanho do sistema de arquivo está diferente do tamanho da partição, portanto o tamanho do sistema de arquivo é ajustado

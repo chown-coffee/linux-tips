@@ -1,0 +1,7 @@
+* informa ao kernel que novas partições foram criadas, ou até mesmo que algumas partições foram deltadas em um disco
+* serve para atualizar a tabela de partições e informa ao sistema operacional para que sejam criados automaticamente os dispositivos no udev
+
+utilização:
+partprobe /dev/sdx
+
+* atualmente, praticamente todos os gerenciadores de particionamento já fazer esse processo automaticamente por padrão, porém é importante saber da existência do partprobe, caso algum erro venha a acontecer

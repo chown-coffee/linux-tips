@@ -1,0 +1,2 @@
+* Faz a deduplicação e o armazenamento com compactação por padrão
+* porém, por não possuir uma licença compatível com o linux, não é disponibilizado por padrão nas distribuições.

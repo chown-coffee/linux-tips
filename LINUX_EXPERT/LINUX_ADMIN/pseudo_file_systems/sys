@@ -1,4 +1,21 @@
 /sys, assim como o /proc, é um pseudo sistema de arquivos do linux.
 Com o crescimento do linux, foi preciso criar o /sys para não sobrecarregar o /proc
 
+* mostra a conexão com dispositivos sendo utilizados no sistema operacional
+* possui a maior parte do controle de dispositivos de blocos, armazenamento e etc foram migrados para o /sys
+* o /proc está mais voltado para operação de redes, processos e etc.
+
 O /sys está mais relacionado a informaćões de dispositivo do sistema
+
+bus --> mostra os barramentos da máquina
+	bus/pnp --> autoconfiguráveis
+	bus/gpio --> pode acionar e desativar portas na máquina
+	bus/i2c --> para comunicação inteligente entre barramentos utilizados por microcontroladores
+
+block --> dispositivos de bloco
+	block/sda --> possui arquivos que conversam diretamente com o kernel.
+		sda/capability --> mostra algumas capacidades do sda
+		sda/power/runtime_status --> pode controlar aspectos de energia do HD (se o mesmo está suspenso, operacional). Em um servidor, por exemplo, pode-se utilizar o arquivo para controlar depois de quanto tempo de inatividade um HD mecânico pararia de movimentar o disco
+		sda/power/async --> mostra se o gerenciamento de energia está sincrono (disabled) ou asincrono (enabled)
+
+fs --> filesystem utilizados na máquina

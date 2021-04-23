@@ -1,0 +1,13 @@
+* permite além de armazenamento de arquivos normal, permite também o armazenamento compactados de arquivos
+* permite também a deduplicação
+	** caso você tenha o mesmo arquivo em dois diretórios diferentes, não será ocupado duas vezes o espaço. Será utilizado apenas um espaço em disco para ambos os armazenamentos. A deduplicação no momento da instalação. É utilizada uma ferramenta terceirizada
+
+nome do pacote: btrfs-tools
+
+utilizando recurso de compactação e deduplicação:
+
+mount /dev/sdxN /particao -o compress
+	--> nesta opção, ele procurará compactar arquivos que sejam comprimíveis. Arquivos já compactados, por exemplo, não serão compactados novamente
+
+*Para forçar a compactação para qualquer arquvo, utilize:
+mount /dev/sdxN /particao -o compress-force

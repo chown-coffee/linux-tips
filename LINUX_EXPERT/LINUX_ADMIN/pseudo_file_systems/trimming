@@ -1,0 +1,6 @@
+utilizado para liberar e sincronizar (discard) os inodes na área que teve blocos removidos ou atualizados
+
+ferramenta utilizada (fstrim)
+
+fstrim -v [/particao (opcional)]
+	--> faz o descarte de inodes não mais utilizados na partição, realizando uma escrita/sobrescrita mais rápida na área

@@ -1,10 +1,10 @@
 /proc é um pseud sistema de arquivos localizado na raiz do sistema
 
-Nele, é possível identificar o status de cada processo, o status de dispositivos, assim como uma visão de como a máquina está operando em nível de hardware e também da execućão dos processos
+Nele, é possível identificar o status de cada processo, o status de dispositivos, assim como uma visão de como a máquina está operando em nível de hardware e também da execução dos processos
 
 Antigamente o sistema linux utilizava apenas o /proc, mas o sistema linux cresceu tanto, que logo foi adicionado o /sys, como outro dispositivo virtual
 
-Atualmente, portanto, o /proc trabalha com a parte básica de hardwares, interrupćões e processos que estão em execućão
+Atualmente, portanto, o /proc trabalha com a parte básica de hardwares, interrupções e processos que estão em execução
 
 -------------
 
@@ -12,10 +12,38 @@ cmdline --> comandos do prompt utilizados no processo
 
 environ --> arquivo que contém as variáveis de ambiente utilizadas no processo
 
-status  --> contém status da execućão do processo (status de memória, alocaćão, status atual, grupos, rssize de memória e etc.)
+status  --> contém status da execução do processo (status de memória, alocação, status atual, grupos, rssize de memória e etc.)
 
-acpi    --> gerência de recursos de interrupćões
+acpi --> gerência de recursos de interrupções. Possui dados sobre o gerenciamento de energia da máquina
+
+fs --> possui dados relacionados ao filesystems que estão rodando na máquina
+
+sys --> dados sobre a execução do sistema
 
 cpuinfo --> trás dados sobre a cpu que está rodando na máquina
 
 meminfo --> trás dados sobre a memória que está rodando na máquina
+
+interrupts --> possui todas as interrupções e quantas interrupções estão sendo utilizadas por cada harware
+
+devices --> especifica os dispositivos sendo utilizados no sistema (memória, virtual console, tty, dispositivos de entrada e etc). Esses dispositivos também se encontram em /dev.
+
+dma --> acesso direto a memória
+	4: cascade
+
+ioports --> portas de entrada e saída.
+
+filesystems --> sistemas de arquivos montados e sportados pelo kernel
+
+kcore --> representação da memória utilizada na máquina (somente o usuário root pode ler o arquivo)
+
+loadavg --> contém os loads da máquina que estão em execução
+
+misc --> possui outros dados de módulos do sistema (são classificados em categoria)
+	watchdog --> monitora a máquina. Caso o kernel pare de responder, ele é responsável por resetar a máquina
+
+modules --> possui os módulos carregados no momento no sistema pelo kernel
+
+mounts --> mostra os pontos de montagem do sistema
+
+uptime --> possui o tempo que a máquinaestá em execução

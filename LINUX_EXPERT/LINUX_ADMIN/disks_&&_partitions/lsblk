@@ -1,0 +1,13 @@
+mostra a estrutura de partições sendo utilizada no momento na máquina
+
+lsblk -a
+	--> formato padrão
+
+lsblk -i
+	--> mostra a árvore apenas com caracteres ascii
+
+lsblk -D
+	--> mostra as capacidades de discard que tenha na máquina
+
+lsblk -l
+	--> mostra em formato de lista
