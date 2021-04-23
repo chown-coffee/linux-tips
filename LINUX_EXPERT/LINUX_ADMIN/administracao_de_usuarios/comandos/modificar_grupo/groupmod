@@ -1,0 +1,7 @@
+modifica informações/características de um grupo
+
+groupmod [flags] [nome_do_usuario]
+
+semelhante ao usermod
+
+see `usermod --help`

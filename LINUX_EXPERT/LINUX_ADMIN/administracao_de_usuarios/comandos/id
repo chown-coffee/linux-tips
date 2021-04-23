@@ -1,0 +1,3 @@
+mostra o uid, gid e grupos do usuário logado na máquina
+
+see `id --help`

@@ -1,0 +1,11 @@
+comando para trocar de usuário
+
+su [flags --optional] [nome_do_usuario --optional]
+
+su --> troca para o usuário root
+
+su - --> troca para o usuário root e entra no diretório home do mesmo
+
+su nome_do_usuario --> troca para o usuário especificado
+
+su - nome_do_usuario --> troca para o usuário especificado e entra no diretório home do mesmo

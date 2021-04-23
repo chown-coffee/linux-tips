@@ -1,0 +1,5 @@
+adiciona um novo grupo
+
+groupadd [flags --optional] [nome_do_grupo]
+
+see `groupadd --help`

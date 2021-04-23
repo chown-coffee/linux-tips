@@ -1,0 +1,6 @@
+remove um grupo
+o grupo é apenas removido quando nenhum usuário pertence a esse grupo
+
+delgroup [flags --optional] [nome_do_grupo]
+
+see `delgroup --help`

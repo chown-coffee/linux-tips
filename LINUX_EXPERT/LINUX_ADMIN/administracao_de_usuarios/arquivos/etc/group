@@ -1,0 +1,13 @@
+/etc/group --> arquivo que armazena as informações dos grupos
+
+1----2-3-4---
+root:x:0:root
+
+1 --> nome do grupo
+
+2 --> refere-se a senha do grupo
+		--> x relata que a senha do grupo está presente no arquivo /etc/gshadow
+
+3 --> gid - group identification
+
+4 --> usuários que pertencem ao grupo

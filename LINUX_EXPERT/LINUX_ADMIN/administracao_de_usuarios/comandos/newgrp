@@ -1,0 +1,4 @@
+newgrp --> adiciona um grupo para o usuário
+o usuário continua parte do grupo apenas até a sessão ser finalizada
+
+see `newgrp --help`

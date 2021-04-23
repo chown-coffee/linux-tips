@@ -1,0 +1,6 @@
+é possível remover um grupo com o comando userdel, utilizando a flag --group
+o grupo é removido apenas quando não há nenhum usuário pertencente aquele grupo
+
+userdel --group [--gid gid --optional] nome_do_grupo
+
+see `userdel --help`

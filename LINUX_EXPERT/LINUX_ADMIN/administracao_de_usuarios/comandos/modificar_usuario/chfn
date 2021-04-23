@@ -1,0 +1,5 @@
+troca informações referentes aos comentários do usuário no arquivo /etc/passwd
+
+chfn [flags --optional] nome_do_usuario
+
+see `chfn --help`

@@ -1,0 +1,5 @@
+troca o shell padrão do usuário
+
+chsh [flags --optional] nome_do_usuario
+
+see `chsh chsh --help`

@@ -1,0 +1,5 @@
+é possível adicionar um grupo através do comando adduser, utilizando a flag `--group`
+
+adduser --group [--gid gid --optional] [nome_do_grupo]
+
+see `adduser --help`

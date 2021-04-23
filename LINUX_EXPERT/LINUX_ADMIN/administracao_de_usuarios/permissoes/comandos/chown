@@ -1,0 +1,13 @@
+altera o dono e/ou o grupo dono de um arquivo
+
+chown usuario arquivo
+
+chown usuario:grupo arquivo
+
+chown usuario.grupo arquivo
+
+chown :grupo arquivo
+
+chown .grupo arquivo
+
+see `chown --help`

@@ -1,0 +1,5 @@
+adiciona um usuário de forma simples, onde é necessário passar alguns parâmetros adicionais para uma adição completa de usuário
+
+useradd [flags --optional] [nome_do_usuario]
+
+see `useradd --help`

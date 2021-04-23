@@ -1,0 +1,5 @@
+deleta um usuário adicionado na máquina
+
+deluser [flags --optional] [nome_do_usuario]
+
+see `deluser --help`

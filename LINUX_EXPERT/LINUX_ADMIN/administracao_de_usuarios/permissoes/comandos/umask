@@ -1,0 +1,44 @@
+umask define qual vai ser a permissão padrão do seu arquivo no momento de criação
+
+umask 0002
+
+as permissões padrões do arquivo na criação serão 0664
+as permissões padrões do diretório na criação serão 0775
+
+#################
+# como funciona #
+#################
+
+modo padrão de arquivo no linux: 0666
+modo padrão de diretório no linux: 0777
+
+portanto, para umask 0002, temos:
+para arquivos:
+	  0666
+	- 0002
+	  ----
+	  0664 --> permissão padrão
+
+para diretórios:
+	  0777
+	- 0002
+	  ----
+		0775 --> permissão padrão
+
+Então, caso mudemos a umask para 0022, a permissão padrão será:
+	  0666
+	- 0022
+	  ----
+	  0644 --> para arquivos
+
+		0777
+	- 0022
+	  ----
+		0755 --> para diretórios
+
+umask [número de permissão para subtração]
+	--> muda o número do umask
+	--> o umask sempre será resetado para 0002 ao reiniciar a máquina
+	--> para manter o número do umask, coloque-o no .bashrc ou outro arquivo que será carregado na inicialização da máquina
+
+see `umask --help`

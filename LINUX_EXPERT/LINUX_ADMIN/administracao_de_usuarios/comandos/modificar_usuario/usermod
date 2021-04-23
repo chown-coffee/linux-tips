@@ -1,0 +1,14 @@
+modifica informações/características de um usuário
+
+usermod [flags] [nome_do_usuario]
+
+usermod
+	[-l novo_nome_de_usuario]
+	[-u uid]
+	[-g gid]
+	[-c comentário(s)]
+	[-d /home/user (o diretório deve existir, caso o diretório não exista e queira que ele seja criado, deve passar a flag `-m` anteriormente, dessa forma: -m -d /home/user)]
+	[-s /bin/shell]
+	nome_do_usuario
+
+see `usermod --help`

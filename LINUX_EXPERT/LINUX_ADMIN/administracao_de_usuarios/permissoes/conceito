@@ -1,0 +1,76 @@
+-rwxrwxr--
+
+| -               | rwx                        | rwx                       | r--                           |
+| tipo do arquivo | permissões do usuário dono | perimissões do grupo dono | permissões de outros usuários |
+
+--------------------
+| TIPO DE ARQUIVO: |
+--------------------
+
+- --> arquivo de texto
+l --> link simbólico
+b --> dispositivo de bloco
+c --> dispositivo de caractere
+s --> sockets
+d --> diretórios
+
+--------------
+| PERMISSÕES |
+--------------
+
+-------------------------------------------------
+| LETRA                       | OCTAL | BINÁRIO |
+-------------------------------------------------
+| - --> ausência de permissão | 0     | 000     |
+| x --> permissão de execução | 1     | 001     |
+| w --> permissão de escrita  | 2     | 010     |
+| r --> permissão de leitura  | 4     | 100     |
+-------------------------------------------------
+
+Então, por exemplo:
+
+rwx = 4 + 2 + 1 = 7
+r-x = 4 + 0 + 1 = 5
+
+A permissão citada nas primeiras linhas, portanto:
+`-rwxrwxr--`, refere-se a uma permissão `774`, em um arquivo texto
+
+########################
+# PERMISSÕES ESPECIAIS #
+########################
+
+chmod 755 arquivo--> permissões normais
+chmod 1755 arquivo --> permissões especiais
+
+em permissões especiais, o primeiro número é o que realiza a ação especial
+
+-------------------------------------------------------------------------------------------
+| LETRA                                                                           | OCTAL |
+-------------------------------------------------------------------------------------------
+| t --> stick bit - apenas o dono do arquivo consegue escrever/alterar o arquivo  | 1     |
+|                   funciona em diretórios                                        |       |
+-------------------------------------------------------------------------------------------
+| s --> SUID      - indica que quando algo é executado, é feito como se fosse o   | 2     |
+|                   usuário dono do arquivo realizando a execução                 |       |
+-------------------------------------------------------------------------------------------
+| s --> SGID      - indica que quando algo é executado, é feito como se fosse o   | 4     |
+|                   grupo dono do arquivo realizando a execução                   |       |
+-------------------------------------------------------------------------------------------
+
+Portanto:
+chmod 0777 diretorio --> permissões normais
+
+chmod 1755 diretório --> permissões especiais com stick bit - arquivos presentes dentro do diretório não poderão ser alterados por ninguém além do dono do arquivo.
+
+exemplo de listagem de diretórios após a utilização do stick bit:
+	-rwxr-xr-t
+
+chmod 2755 diretorio/arquivo --> permissões especiais com SUID
+
+exemplo de listagem de arquivo após a utilização do SUID
+	-rwsr-xr-x
+
+chmod 4755 diretório/arquivo --> permissões especiais com SGID
+
+exemplo de listagem de arquivo após a utilização do SGID
+	-rwxr-sr-x

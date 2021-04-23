@@ -1,0 +1,5 @@
+segue a ordem do arquivo /etc/skel, semelhante ao adduser
+
+addgroup [flags --optional] [nome_do_grupo]
+
+see `addgroup --help`

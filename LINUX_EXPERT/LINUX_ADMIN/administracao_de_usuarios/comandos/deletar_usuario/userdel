@@ -1,0 +1,5 @@
+semelhante ao deluser
+
+userdel [flags --optional] [nome_do_usuario]
+
+see `userdel --help`

@@ -1,0 +1,37 @@
+modifica as permissões de um arquivos
+
+-----------------------------------
+| UTILIZANDO SIMBÓLICOS (LETRAS): |
+-----------------------------------
+
+chmod [para quem será aplicada a permissão] [permissão]
+
+Para quem será aplicada a permissão:
+u --> usuário dono do arquivo
+g --> grupo dono do arquivo
+o --> outros usuários/grupos
+a --> all
+
+Portanto:
+
+chmod u+x arquivo
+	--> adiciona permissão de execução para o arquivo
+
+chmod o-w arquivo
+	--> remove a permissão de escrita de outros usuários
+
+chmod u=rwx,g-x,o=r
+	--> deixa a permissão do usuário como 7 (leitura, escrita e execução)
+	--> remove a permissão de execução do grupo dono
+	--> deixa a permissão de outros usuários exatamente como 4 (apenas leitura)
+
+--------------------
+| UTILIZANDO OCTAL |
+--------------------
+
+chmod 754 arquivo
+	--> o primeiro número refere-se ao usuário dono
+	--> o segundo número refere-se ao grupo dono
+	--> o terceiro número refere-se a outros usuários
+
+see `chmod --help`

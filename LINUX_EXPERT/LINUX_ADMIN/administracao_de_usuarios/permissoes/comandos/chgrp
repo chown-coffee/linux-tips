@@ -1,0 +1,5 @@
+muda o grupo dono do arquivo
+
+chgrp grupo arquivo
+
+see `chgrp --help`

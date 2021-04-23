@@ -1,0 +1,22 @@
+coloca senha em um grupo
+também é possível adicionar um usuário especificado a um determinado grupo
+
+gpasswd [flags --optional] [nome_do_grupo]
+
+gpasswd -u nome_do_usuario nome_do_grupo
+	--> adiciona um usuário especificado a um determinado grupo
+
+gpasswd -d nome_do_usuario nome_do_grupo
+	--> deleta um usuário especificado de um determinado grupo
+
+gpasswd -A nome_do_usuario nome_do_grupo
+	--> adiciona um administrador para o grupo especificado
+	--> um administrado pode adicionar e deletar usuários do grupo
+
+gpasswd -M nome_do_usuario nome_do_grupo
+	--> adiciona um administrador para o grupo especificado
+	--> além de adicionar como administrador, o usuário especificado também é colocado como membro do grupo
+
+flags semelhantes as do comando passwd
+
+see `gpasswd --help`

@@ -1,0 +1,6 @@
+adicionar um usuário, baseado no arquivo /etc/skell
+é uma adição de usuário extremamente comple e dinâmica, onde todas as características simples de criação de usuário são adicionadas (criação da home do usuário, grupos pertencentes e etc.)
+
+adduser [flags --optional] [nome_do_usuário]
+
+-- see `adduser --help`
