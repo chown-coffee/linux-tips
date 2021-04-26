@@ -1,0 +1,2 @@
+possui as funções do .bashrc, porém funcional para todos os usuários da máquina
+caso queira trocar algo no bash (ou qualquer outro shell) que sirva para rodos os usuários, este arquivo será o responsável por isso

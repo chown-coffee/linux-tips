@@ -1,0 +1,57 @@
+É uma variável global para o sistema operacional
+A variável de ambiente é alocada em uma parte da memória, podendo ser acessada por todos os programas dentro do sistema operacional
+Por convensão, nomes de variáveis de ambiente são maiúsculas
+
+Exemplos de variáveis de ambiente:
+
+PATH --> armazena paths para binários do sistema
+
+USER --> possui o usuário logado na máquina
+
+SHELL --> possui o shell padrão do usuário
+
+LANG --> possui a linguagem setada na máquina
+	--> ex: LANG=en_US.UTF-8
+
+LC_MESSAGES --> armazena o idioma default das mensagens apresentadas na tela
+	--> ex: LANG=en_US.UTF-8
+
+LC_ALL --> apresenta o idioma default que será usado no sistema
+	--> ex: LANG=en_US.UTF-8
+
+------------------------------------
+| CRIAÇÃO DE VARIÁVEIS DE AMBIENTE |
+------------------------------------
+
+VARIAVEL=valor
+	--> cria uma variável de ambiente temporária (termina ao finalizar a sessão de criação)
+
+export VARIAVEL=valor
+	--> Faz a criação da variável de ambiente, similar ao exemplo anterior, porém também faz a exportação da variável para o sistema
+	--> a variável será resetada apenas ao reiniciar o computador (ou caso seja resetada manualmente com o comando unset)
+
+set VARIAVEL=valor
+	--> similar ao primeiro exemplo
+	--> a variável é criada, porém não é exportada
+
+---------------------------------
+| RETIRAR VARIÁVEIS DE AMBIENTE |
+---------------------------------
+
+unset VARIAVEL
+	--> tira a variável especificada das variáveis de ambiente exportadas
+
+-----------------------------------------
+| MUDANDO VALOR DA VARIAVEL DE AMBIENTE |
+-----------------------------------------
+
+VARIAVEL=novo valor
+	--> sobrescreve o valor atual da variável de ambiente pelo novo valor
+
+VARIAVEL=$VARIAVELnovo valor
+	--> concatena o novo valor com o valor já presente na variável de ambiente
+	--> o novo valor é colocado na frente da variável
+
+VARIAVEL=novo valor$VARIAVEL
+	--> concatena o novo valor com o valor já presente na variável de ambiente
+	--> o novo valor é colocado atrás da variável

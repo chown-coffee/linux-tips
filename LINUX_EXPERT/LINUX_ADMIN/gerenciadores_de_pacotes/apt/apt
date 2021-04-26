@@ -1,0 +1,55 @@
+realiza o gerenciamento de pacotes
+
+apt install pacote
+	--> similar: apt-get install pacote
+	--> baixa o pacote e realiza a instalação do mesmo
+	--> o pacote é baixado de um repositório remoto
+	--> existe na máquina uma lista de pacotes disponíveis presentes no repositório remoto
+	--> internamente, a instalação é feita pelo dpkg
+	--> passando a opção `-y`, não será perguntado se você realmente quer fazer a instalação.
+
+apt install -f
+	--> similar: apt-get install -f
+	--> é utilizado quando você tenta fazer uma instalação com o dpkg, mas dá errado (geralmente por conta de dependências)
+	--> o apt, com a opção `-f`, pegará tudo que deu de errado com a instalação do dpkg e tentará novamente (resolvendo dependências e outros possíveis erros)
+
+apt remove pacote
+	--> similar:  apt-get remove pacote
+	--> similar2: dpkg -r pacote
+	--> desinstala um pacote da máquina
+	--> por padrão, apenas o binário é desinstalado
+
+apt remove --purge pacote
+	--> similar:  apt-get remove --purge pacote
+	--> similar2: apt purge pacote
+	--> similar3: apt-get purge pacote
+	--> similar4: dpkg -P pacote
+	--> faz a desinstalação completa do pacote especificado
+
+apt autoremove
+	--> similar: apt-get autoremove
+	--> será removido todos os pacotes não utilizados na máquina
+
+apt download pacote
+	--> similar: apt-get download pacote
+	--> faz apenas o download do pacote.deb
+	--> não faz a instalação
+
+apt-cache show
+	--> lista os pacotes.deb instalados na máquina (/var/cache/apt/archives)
+
+apt-cache show pacote
+	--> lista o pacote.deb do pacote especificado
+
+apt-cache depends pacote
+	--> mostra as dependências do pacote especificado
+
+apt update
+	--> similar: apt-get update
+	--> atualiza a lista de pacotes disponíveis no repositório na máquina
+
+apt upgrade
+	--> similar: apt-get upgrade
+
+see `apt --help`
+		`apt [option] --help`

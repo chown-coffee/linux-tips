@@ -1,0 +1,50 @@
+realiza o gerenciamento de pacotes
+
+yum install pacote
+	--> baixa o pacote e realiza a instalação do mesmo
+	--> o pacote é baixado de um repositório remoto
+	--> internamente, a instalação é feita pelo rpm
+	--> passando a opção `-y`, não será perguntado se você realmente quer fazer a instalação
+
+yum remove pacote
+	--> desinstala um pacote da máquina
+
+yum update pacote
+	--> realiza o update/upgrade do pacote especificado
+
+yum search pacote
+	--> procura pelo pacote especificado
+
+yum info pacote
+	--> mostra detalhes sobre o pacote especificado
+
+yum list
+	--> mostra todos os pacotes presentes na máquina
+
+yum list installed
+	--> mostra todos os pacotes instalados na máquina
+
+yum provides /path/arquivo
+	--> mostra para qual pacote o arquivo especificado pertence
+
+yum grouplist
+	--> mostra os grupos disponíveis para instalação
+	--> grupos possuem diversos pacotes de uma determinada categoria
+
+yum groupinstall "nome do grupo"
+	--> instala um grupo de pacotes
+
+yum groupremove "nome do grupo"
+	--> remove um grupo de pacotes
+
+yum repolist
+	--> mostra todos os repositórios habilitados na máquina
+
+yum repolist all
+	--> mostra todos os repositórios (habilitados e desabilitados)
+
+yum --enablerepo=nome-do-repositorio install pacote
+	--> habilita um repositório para instalação
+
+see `yum --help`
+		`yum [option] --help`

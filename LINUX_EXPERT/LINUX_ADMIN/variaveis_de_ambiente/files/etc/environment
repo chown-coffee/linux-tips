@@ -1,0 +1,16 @@
+local correto (conceitualmente) para armazenar as variáveis personalizadas de ambiente
+é um arquivo que será lido pela máquina em todo boot, exportando as variáveis de ambiente presentes nele
+
+EXEMPLO (/etc/environment):
+
+```
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+PATH=/home/coffee:$PATH
+IWASAWA=PERFEITA
+LAIN=DEUSA
+```

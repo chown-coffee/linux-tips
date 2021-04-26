@@ -1,0 +1,9 @@
+trás todas as variáveis de ambiente do sistema
+porém, diferente do comando `set`, trás apenas as variáveis de ambiente
+
+printenv
+	--> trás o nome de todas as variáveis de ambiente setadas na máquina
+
+printenv VARIAVEL
+	--> similar: echo $VARIAVEL
+	--> trás o conteúdo da variável de ambiente especificada

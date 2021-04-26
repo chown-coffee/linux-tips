@@ -1,0 +1,7 @@
+parecido com o comando apropos, porém com algumas opções já vindas por padão
+
+whatis comando
+	--> semelhante a opção -e do apropos, porém ainda mais sofisticado, visto que porcurará por ls apenas no lado dos comandos
+
+whatis -w comando
+	--> permite a utilização de wildcards na busca

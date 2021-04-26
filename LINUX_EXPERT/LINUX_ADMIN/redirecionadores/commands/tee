@@ -1,0 +1,5 @@
+pega um conteúdo, mostra-o na tela, mas também redireciona este conteúdo para um arquivo
+
+semelhante a: echo "alibaba" > arquivo && cat arquivo
+
+resumido a: echo "alibaba"|tee arquivo

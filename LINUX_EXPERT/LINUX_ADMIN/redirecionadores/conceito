@@ -1,0 +1,52 @@
+------------------------------
+| STDOUT --> STANDARD OUTPUT | - FD 1
+------------------------------
+
+>
+	--> redireciona a saída padrão (STDOUT)
+		--> pode ser redirecionado para um arquivo, dispositivo e etc.
+	--> ex: ls -lhA >saida.iwa
+		--> redireciona a saída do comando `ls -lhA` para o arquivo `saida.iwa`
+		--> caso `saida.iwa` já exista, o conteúdo será sobrescrito
+
+>> --> redireciona a saída padrão (STDOUT), semelhante ao `<`, porém não sobrescreve o conteúdo no arquivo/dispositivo, caso o mesmo já exista.
+		--> É feito um append, criada uma nova linha no arquivo e somado o conteúdo novo com o conteúdo já existente
+
+----------------------------
+| STDIN --> STANDARD INPUT | - FD 0
+----------------------------
+
+< --> Redireciona a entrada padrão (STDIN)
+
+<< --> Faz o redirecionamento da entrada padrão (STDIN)
+
+-----------------------------
+| STDERR --> STANDARD ERROR | - FD 2
+-----------------------------
+
+2> Redireciona a saída de erro (STDERR)
+
+2>> Redireciona a saída de erro realizando a concatenação
+
+FD --> File Descriptor
+
+	STDIN  --> 0
+	STDOUT --> 1
+	STDERR --> 2
+
+ls > ls.txt
+	--> redireciona a saída do comando ls para o arquivo `ls.txt`
+
+ls >> ls.txt
+	--> redireciona a saída do comando ls para o arquivo `ls.txt` concatenando com o conteúdo já existente (caso exista)
+
+cat balela 2> erro_cat.iwa
+	--> redireciona o erro do comando cat para o arquivo cat.iwa
+
+ls balela >ls.txt 2>&1
+	--> redireciona a saída de erro para a saída padrão (2>&1)
+	--> redireciona a saída padrão para o arquivo ls.txt
+
+cat << EOF > arquivo.txt
+	--> concatena EOF a entrada padrão do cat, esperando ser digitado `EOF` para sair do input
+	--> redireciona a saída do comando para o arquivo `arquivo.txt`

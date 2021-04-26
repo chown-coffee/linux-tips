@@ -1,0 +1,6 @@
+|| --> OR
+
+comando_a || comando_b || ... || comando_n
+	--> executa o primeiro comando
+	--> continua executando os próximos comandos, apenas se o comando anterior falhar
+	--> caso algum comando dê sucesso, a sequência será encerrada

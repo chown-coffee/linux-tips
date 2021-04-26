@@ -1,0 +1,3 @@
+comandoA | comandoB
+
+pega a saída do comando B e joga para um comando B como conteúdo

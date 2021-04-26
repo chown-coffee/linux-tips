@@ -1,0 +1,42 @@
+realiza a instalação de pacotes `.deb` baixados na máquina
+	--> não resolve dependências
+
+dpkg -i pacote.deb
+	--> realiza a instalação do pacote
+
+dpkg -l
+	--> lista todos os pacotes instalados na máquina
+
+dpkg -l pacote
+	--> lista o pacote específico
+
+dpkg -r pacote
+	--> remove o pacote especificado
+	--> é feita apenas a remoção do binário, porém o pacote continuará sendo listado
+
+dpkg -P pacote
+	--> remove (completamente) o pacote especificado
+
+dpkg -L pacote
+	--> trás todos os arquivos associados ao pacote
+
+dpkg -S /path/do/arquivo
+	--> trás qual o pacote dono do arquivo especificado
+
+dpkg -I pacote.deb
+	--> trás informações relacionadas ao pacote
+
+dpkg -s pacote
+	--> similar ao `dpkg -I pacote.deb`, porém mostra as informações do pacote já instalado no sistema, não do pacote.deb
+
+dpkg -C
+	--> similar: dpkg --audit
+	--> procura por pacotes corrompidos
+
+dpkg -C pacote
+	--> verifica se o pacotes especificado está corrompido
+
+dpkg --configure pacote
+	--> permite fazer a re-configuração de um pacote
+
+see `dpkg --help`

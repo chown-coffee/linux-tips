@@ -1,0 +1,45 @@
+realiza a instalação de `pacotes.rpm`
+
+rpm -ivh pacote
+	--> instala um pacote.rpm
+	--> i : install
+	--> v : verbose
+	--> h : hash (para motrar a hash de progresso da instalação)
+
+rpm -Uvh pacote
+	--> realiza um update no pacote
+	--> U : Update
+	--> v : verbose
+	--> h : hash (para motrar a hash de progresso da instalação)
+
+rpm -ev pacote
+	--> faz a deleção de um pacote instalado
+	--> e : erase
+	--> v : verbose
+
+rpm -qa
+	--> lista todos os pacotes instalados via `.rpm`
+	--> q : query
+	--> a : all
+
+rpm -qa pacote
+	--> lista o pacote especificado
+	--> q : query
+	--> a : all
+
+rpm -qi pacote
+	--> trás informações relacionadas ao pacote especificado
+
+rpm -ql pacote
+	--> lista todos os arquivos pertencentes ao pacote especificado
+
+rpm -qf arquivo
+	--> mostra a qual pacote o arquivo especificado pertence
+
+rpm -qc pacote
+	--> mostra o arquivo de configuração do pacote especificado
+
+rpm -qa --last
+	--> mostra todos os pacotes instalados recentemente
+
+see `rpm --help`

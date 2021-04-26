@@ -1,0 +1,7 @@
+mostra onde está o binário de um determinado comando
+
+which comando
+	--> mostra onde se localiza o binário do comando
+
+which -a comando
+	--> mostra TODOS os locais onde se localizam o binário do comando

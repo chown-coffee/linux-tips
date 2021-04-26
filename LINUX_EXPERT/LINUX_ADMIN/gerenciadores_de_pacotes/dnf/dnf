@@ -1,0 +1,50 @@
+realiza o gerenciamento de pacotes
+
+dnf install pacote
+	--> baixa o pacote e realiza a instalação do mesmo
+	--> o pacote é baixado de um repositório remoto
+	--> internamente, a instalação é feita pelo rpm
+	--> passando a opção `-y`, não será perguntado se você realmente quer fazer a instalação
+
+dnf remove pacote
+	--> desinstala um pacote da máquina
+
+dnf update pacote
+	--> realiza o update/upgrade do pacote especificado
+
+dnf search pacote
+	--> procura pelo pacote especificado
+
+dnf info pacote
+	--> mostra detalhes sobre o pacote especificado
+
+dnf list
+	--> mostra todos os pacotes presentes na máquina
+
+dnf list installed
+	--> mostra todos os pacotes instalados na máquina
+
+dnf provides /path/arquivo
+	--> mostra para qual pacote o arquivo especificado pertence
+
+dnf grouplist
+	--> mostra os grupos disponíveis para instalação
+	--> grupos possuem diversos pacotes de uma determinada categoria
+
+dnf groupinstall "nome do grupo"
+	--> instala um grupo de pacotes
+
+dnf groupremove "nome do grupo"
+	--> remove um grupo de pacotes
+
+dnf repolist
+	--> mostra todos os repositórios habilitados na máquina
+
+dnf repolist all
+	--> mostra todos os repositórios (habilitados e desabilitados)
+
+dnf --enablerepo=nome-do-repositorio install pacote
+	--> habilita um repositório para instalação
+
+see `dnf --help`
+		`dnf [option] --help`

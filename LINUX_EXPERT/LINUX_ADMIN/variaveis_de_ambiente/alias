@@ -1,0 +1,9 @@
+permite criar apelidos para comandos
+
+alias
+	--> mostra todos os alias setados na máquina
+
+alias lse='ls --color=auto --group-directories-first'
+	--> sempre que for digitado `lse` no terminal, internamente o comando executado será `ls --color=auto --group-directories-first`
+	--> o alias morrerá ao se encerrar a sessão
+	--> para manter o alias, deve-se colocá-lo em um arquivo que sempre será executado na inicialiação do shell (.bashrc, .bash_profile, .profile e etc)

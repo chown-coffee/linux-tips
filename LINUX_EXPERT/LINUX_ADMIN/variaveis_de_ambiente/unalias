@@ -1,0 +1,4 @@
+remove um alias
+
+unalias comando_alias
+	--> remove o alias especificado

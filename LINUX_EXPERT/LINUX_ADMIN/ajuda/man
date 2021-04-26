@@ -1,0 +1,9 @@
+trás um pequeno manual sobre um comando no linxu
+`man comando`
+
+man -k comando
+	--> trás as sessões disponíveis para um comando
+
+man 5 comando
+	--> abre o manual de ajuda do comando da sessão 5
+	--> as sessões vão de 1 a 9

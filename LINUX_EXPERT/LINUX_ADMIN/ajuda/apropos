@@ -1,0 +1,10 @@
+mostra as sessões disponíveis para um comando
+
+apropos comando
+	--> funciona como um `.contains`
+
+apropos -e comando
+	--> a opção -e procura exatamente o nome do comando
+
+apropos -w ?c[a-zA-Z0-9]{"uhu","iwa","lain"}omando*
+	--> a opção -w permite a procura utilizando wildcards

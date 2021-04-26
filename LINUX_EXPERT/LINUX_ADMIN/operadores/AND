@@ -1,0 +1,5 @@
+&& --> AND
+
+comando_a && comando_b && ... && comando_n
+	--> executa cada comando em ordem.
+	--> caso um comando dê errado, a sequência será encerrada
