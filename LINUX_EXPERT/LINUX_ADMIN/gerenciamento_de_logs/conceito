@@ -1,0 +1,17 @@
+LOG --> Eventos, mensagens de ações
+arquivos de log --> guardam os eventos de LOGS
+
+LOGS podem ter tanto erros quanto acertos
+
+diretório padrão para guardar arquivos de logs: /var/log
+/var/log/messages é o arquivo de log principal de Debian based distros
+
+daemon.log --> logs dos daemons
+kern.log --> logs vindos diretamente do kernel
+
+-------------
+| IMPORTANT |
+-------------
+
+os nomes dos arquivos de logs podem variar
+olhe em /etc/rsyslog para verificar quais nomes estão sendo colocados nos arquivos

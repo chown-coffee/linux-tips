@@ -1,0 +1,26 @@
+possui configurações específicas para logs
+
+caso queira uma configuração específica para determinado log, é através deste diretório que isso irá ser feito
+
+exemplo de configuração específica para o wtmp:
+
+```
+# no packages own wtmp -- we'll rotate it here
+/var/log/wtmp {
+	missingok
+	monthly
+	create 0664 root utmp
+	minsize 1M
+	rotate 1
+}
+```
+
+missingok --> caso o arquivo não exista, não dará erro
+
+montly --> o rotate será feito mensalmente
+
+create --> a criação do novo arquivo de log será feita com as permissões descritas, com usuário e grupo dono descritos
+
+minsize --> tamanho mínimo do arquivo de log para ser feita a rotação
+
+rotate --> quantas rotações serão salvas (no caso acima, somente a última rotação será salva)

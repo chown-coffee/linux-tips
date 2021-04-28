@@ -1,0 +1,4 @@
+por padrão é um comando para visualizar as últimas linhas de um arquivo, porém é muito utilizado para visualizar logs
+
+tail -f arquivo
+	--> a opção -f mantém você dentro do arquivo que está lendo. Assim, caso cheguem novas mensagens, elas aparecerão na tela

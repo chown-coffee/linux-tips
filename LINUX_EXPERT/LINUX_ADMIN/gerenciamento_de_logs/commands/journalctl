@@ -1,0 +1,62 @@
+mantém logs do sistema para sistemas utilizando o systemd
+
+journalctl
+	--> trás todos os logs da máquina
+
+journalctl -b
+	--> trás as mensagens de log somente do último boot
+
+journalctl --utc
+	--> trás os logs com o horário baseado em UTC
+
+journalctl -b --since "2020-12-19 07:00"
+	--> trás todos os logs desde as 7 horas da manhã do dia 19 do 12 de 2020
+
+journalctl -b --since "2020-12-19 07:00" --until "2020-12-19 08:20"
+	--> trás todos os logs desde as 7 horas da manhã do dia 19 do 12 de 2020 até as 8 horas e 20 minutos do mesmo dia
+
+journalctl --since today --until "1 hour ago"
+	--> trás todos os logs de hoje até 1 hora atrás
+
+journalctl --since 06:00 --until "1 hour ago"
+	--> trás todos os logs à partir das 06:00 da manhão de hoje até 1 hora atrás
+
+journalctl -u ssh [-u other_unit]
+	--> trás todos os logs da unidade `ssh`
+
+journalctl -k
+	--> trás todos os logs vindos do kernel
+
+journalctl -p err
+	--> trás somente as mensagens de erro
+	--> a flag -p permite passar a prioridade (nível): debug, info, notice, warning, err, crit, alert e emerg
+
+journalctl -o json
+	--> a flag -o trás a saída em um formato específico
+	--> no caso acima, a saída virá em formato json
+	--> `-o json-pretty` trará a saída em json já formatada
+	--> `-o verbose` trará uma saída verbosa
+	--> `-o short` trará uma saída curta
+	--> `-o short-iso` trará a saída no formato padrão de logs
+	--> `-o cat` trás em modo cat
+
+journalctl -n
+	--> trará as últimas 10 linhas do log
+	--> `-n 3` trará as três últimas linhas do log
+
+journalctl -f
+	--> ficará no comando. Parecido com o `tail -f arquivo`
+
+journalctl --disk-usage
+	--> mostrará o quanto de disco está sendo usado pelo journald
+
+journalctl --vacuum-size=10G
+	--> especificará um tamanho máximo a ser utilizado pelo journal
+	--> no caso acima, 10G será o máximo armazenado
+
+journalctl --vacuum-time=1week
+	--> especificará o tempo máximo de log armazenado dentro do journalctl
+	--> no caso acima será de 4 semanas
+	--> outros exemplos: `3month`, `7year`, `4day`, `21hour`
+
+see `journalctl --help`
