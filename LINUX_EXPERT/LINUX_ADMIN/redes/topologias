@@ -1,0 +1,22 @@
+tologias (tipos) de redes
+
+WAN --> Distâncias grandes
+LAN --> Local area Network -- distâncias locais
+MAN --> Metropolitan area network
+
+TOPOLOGIAS LÓGICAS
+
+Token Ring -- compuradores conectados em forma de anél
+	--> apenas um computador por vez consegue conversar na rede (apenas o computador que estiver com o token (anel))
+	--> chegou a ser criado também token ring com anél duplo, onde haviam dois tokens, permitindo que 2 computadores conseguissem conversar simultaneamente pela rede
+
+Barramento
+	--> as máquinas eram conectadas em um backbone (por um cabo coaxial)
+	--> caso o backbone quebrasse, todos os computadores perdiam a conexão
+
+Ethernet
+	--> as máquinas não são mais ligadas em anél, mas sim em um centralizador (um switch, por exemplo)
+
+TOPOLOGIAS FÍSICAS
+	--> estrela
+	--> estrela extendida

@@ -1,0 +1,17 @@
+- Configurar o IPv6 local da sua rede usando a faixa privada fc00/7
+	- Ex: fc00:f0ca:f0ca::1/64
+- Configurar a distribuição de IPv6 no servidor usando o RadVD pi IPv6
+- Adicionar a rota: para os serviços internos:
+	- ip -6 route add 2000::/3 via 2804:23a:35c:100:a::2
+
+	(supondo que 2804:23a:35c:100:a::2 é o seu endereço de internet recebido do provedor remoto)
+
+	Habilitar ipforward no IPv6 (1):
+
+	cat /proc/sys/net/ipv6/conf/all/forwarding
+
+- Habilitar NAT: ip6tables -t nat -A POSTROUTING -s fc00:f0ca:f0ca:f0ca::0/64 -o ens3p1 -j MASQUERADE
+
+CHECAR IPv6
+
+https://test-ipv6.com/

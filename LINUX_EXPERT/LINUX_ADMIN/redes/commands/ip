@@ -1,0 +1,22 @@
+ip addr show
+	--> similar: ip a s
+	--> lo (loopback) -- endereço local -- utilizado para comunicação interna de rede
+			--> 127.0.0.1 para IPv4
+			--> ::1/128 para IPv6
+	--> enp* --> redes para conexão a rede externa
+
+ip addr show dev [DISPOSITIVO DE REDE]
+	--> similar: ip a s dev [DISPOSITIVO DE REDE]
+	--> lista as informações da rede apenas sobre o dispositivo especificado
+
+ip -4 a s
+	--> exibe apenas os parâmetros IPv4 dos endereços de rede
+
+ip -6 a s
+	--> exibe apenas os parâmetros IPv6 dos endereços de rede
+
+ip addr add 192.168.0.215/24 dev enp6s0
+	--> adiciona um endereço de IP na rede (no dispositivo enp6s0)
+
+ip -6 addr add fd00:f0ca:f0ca:f0ca::d40/64 dev enp6s0
+	--> adiciona um endereço de IPv6 na rede (no dispositivo enp6s0)

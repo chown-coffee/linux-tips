@@ -1,0 +1,45 @@
+Modelo OSI (Open System Interconnection)
+	--> modelo de referência de redes de computadores criado pela ISO, dividido em 7 camadas
+	--> tem objetivo de dar um padrão para redes (principalmente locais)
+
+-----------
+| CAMADAS |
+-----------
+
+7 -- Aplicação
+	--> Aplicações de fato
+	--> exemplos
+			--> netmap, netcat, HTTP, DNS e etc.
+6 -- Apresentação
+	--> responsável pela normalização (entrega e formatação) da informação para a camada de aplicação
+	--> exemplos
+			--> TLS (Transport Layer Security) -- baseado no SSL (Security Sockets Layer) é responsável por prover segurança na comunicação entre a fonte e o destino
+5 -- Sessão
+	--> cuida dos processos que controlam a transferência de dados, cuidadndo dos erros e administrando os registros das transmissões
+	--> exemplos
+			--> netbios
+4 -- Transporte
+	--> responsáveis por transportar informações
+	--> exemplos
+			--> TCP -- recebe uma confirmação de recebimento do pacote - é capaz de reenviar o pacote caso ocorra algum erro -- mais seguro, mais lento
+			--> UDP -- não requer nenhuma confirmação de recebimento de pacote -- menos seguro, mais rápido
+			--> SCTP -- serviço de transporte confiável que opera sobre um serviço de pacotes não confiável
+3 -- Rede
+	--> utiliza protocolos de roteamento (IP, IPX e etc.)
+	--> consegue verficar qual o melhor caminho (melhor rota) para o destino
+	--> exemplos
+			--> roteadores
+					--> IP (IPv4, IPv6, IPsec, IPx)
+			--> switches de camada 3
+2 -- Enlace
+	--> exemplos
+			--> switches convencionais (que trabalham com MAC Address)
+			--> token ring
+			--> FDDI
+			--> ethernet
+	--> LLC (Logical Link Control) - camada mais alta da camada de enlace
+	--> MAC (Media Access Control) - endereço físico do dispositivo (número único)
+1 -- Física
+	--> parte de hardware do sistema
+	--> exemplos
+			--> Cabos, fibra, wifi, placa de rede e etc.

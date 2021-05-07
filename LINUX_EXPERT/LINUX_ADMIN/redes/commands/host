@@ -1,0 +1,9 @@
+mostra o IP principal de conexão de um site
+
+host www.site.com
+
+host -t A www.site.com
+	--> a flag -t é capaz de especificar um tipo de host
+	--> `A` refere-se a um endereço do tipo IPv4
+	--> `AAAA` refere-se a um endereço do tipo IPv6
+	--> `mx` refere-se a `mail exchange` -- mostra os servidores de e-mail de um site

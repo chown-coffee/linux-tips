@@ -1,0 +1,68 @@
+É um protocolo de roteamento de comunicação entre computadores que substitui o IPv4
+
+---------------------------------
+| VANTAGENS COM RELAÇÃO AO IPv4 |
+---------------------------------
+
+* Número maior de endereços, permitindo conectar qualquer dispositivo a internet com um IPv6 válido
+
+* Design mais moderno em relação ao IPv4 (ex, largura de janela variável)
+
+* Aproveitamento do endereçamento
+
+* Melhor fluxo para tráfego interativo
+
+-------------------
+| COMPARAÇÃO IPv4 |
+-------------------
+
+- Permite a co-existência com o IPv4
+
+- Aproveitamento de endereços (não tem broadcast/network, é usado multicast)
+
+- Endereços contém hexadecimais (0 a f)
+
+- Um /126 tem 3 endereços (equivalente ao /30)
+
+- Em geral não é informada uma máscara de rede para fazer a operação de AND igual ao IPv4, mesmo assim a notação de bit count foi mantida
+
+- Linux suporta totalmente o IPv6 desde 2004
+
+- Melhor experiência de navegação/uso da internet
+
+- É um protocolo com muito foca para internet, porém é possível utilizar o NAT
+
+#######################
+# NÚMERO DE ENDEREÇOS #
+#######################
+
+IPv4: 4.294.967.296
+
+IPv6: 340.282.366.920.938.463.463.374.607.431.768.211.456 (340 undecilhões)
+
+...
+
+- Serviços como PPPoE ou RadVD precisam de blocos /64 por conta de montagem de endereços usando o MAC address
+
+- Uma máscara /32 é IP pra caramba
+
+- Um /32 pode ter 65536 sub-redes /48
+
+---------------------------------------------
+| ENDEREÇOS RESERVADOS EQUIVALENTES AO IPv4 |
+---------------------------------------------
+
+::1/128 --> Loopback
+        --> 127.0.0.1
+
+::/128 --> Não especificado
+
+::ffff:0:0/96 --> Mapeamento de IPv4 em cima de IPv6
+
+64:ff9b:/96 --> Tradução IPv4-IPv6
+
+2001:db8::/32 --> Usado em documentações
+
+fc00:/7 --> Rede privada
+
+fe80::/10 --> Endereço de link local

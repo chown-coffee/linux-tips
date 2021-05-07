@@ -1,0 +1,20 @@
+CIDR refere-se a quantidade de bits que a máscara está usando
+IP/CIDR
+
+Exemplo
+192.168.86.113/24
+	--> o CIDR é 24, portanto a máscara está utilizando 24 bits
+	--> assim, sabe-se que a máscara é 11111111.11111111.11111111.0
+
+192.168.86.113/16
+	--> o CIDR é 16, portanto a máscara está utilizando 16 bits
+	--> assim, sabe-se que a máscara é 11111111.11111111.0.0
+
+192.168.86.113/12
+	--> o CIDR é 12, portanto a máscara está utilizando 12 bits
+	--> assim, sabe-se que a máscara é 11111111.11110000.0.0
+	--> este é um exemplo de subnet
+
+192.168.86.113/8
+	--> o CIDR é 8, portanto a máscara está utilizando 8 bits
+	--> assim, sabe-se que a máscara é 11111111.0.0.0

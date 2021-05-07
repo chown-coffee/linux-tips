@@ -1,0 +1,50 @@
+CONVERSÃO DO IP EM BINÁRIO
+
+Um endereço IP é composto por 4 octetos (número binário de até 8 dígitos)
+Cada octeto vai de 0 a 11111111 (de 0 a 255)
+
+IP
+---------------------------------------------
+| 192      | 168      | 86       | 100      |
+---------------------------------------------
+| 11000000 | 10101000 | 01010110 | 01100100 |
+---------------------------------------------
+
+Netmask: Refere a parte da rede
+---------------------------------------------
+| 255      | 255      | 255      | 0        |
+---------------------------------------------
+| 11111111 | 11111111 | 11111111 | 00000000 |
+---------------------------------------------
+| endereço destinado a rede      | hosts    |
+---------------------------------------------
+
+CLASSES:
+A máscara determina a classe do IP
+
+A)
+Netmask: 11111111.00000000.00000000.00000000
+0.0.0.1 até 126.255.255.255
+	--> 16.777.216 IP's possíveis
+
+B)
+Netmask: 11111111.11111111.00000000.00000000
+128.0.0.0 até 191.255.255.255
+	--> 65.536 IP's possíveis
+
+C)
+Netmask: 11111111.11111111.11111111.00000000
+192.0.0.0 até 223.255.255.255
+	--> 256 IP's possíveis
+
+Broadcast: Pega o IP e liga tudo o que for referente ao host
+Exemplo com o IP 192.168.86.102
+	--> Classe A) 192.255.255.255
+	--> Classe B) 192.168.255.255
+	--> Classe A) 192.168.86.255
+
+Network (endereço da rede): Zera os hosts
+Exemplo com o IP 192.168.86.102
+	--> Classe A) 192.0.0.0
+	--> Classe B) 192.168.0.0
+	--> Classe A) 192.168.86.0

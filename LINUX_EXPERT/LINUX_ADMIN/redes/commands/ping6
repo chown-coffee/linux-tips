@@ -1,0 +1,4 @@
+ping6 fd00:f0ca::40:1
+	--> similar: ping -6 fd00:f0ca:f0ca::40:1
+	--> ping para IPv6
+	--> o espaço entre :: é internamente preenchido por 0 -- facilita para digitação do IPv6

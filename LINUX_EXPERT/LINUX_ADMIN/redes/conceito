@@ -1,0 +1,22 @@
+conexão entre um ou mais hosts (máquina física, máquina virtual, dispositivos inteligentes e etc.)
+	--> host denota algo com IP para acesso, tudo o que possui um endereço para funcionar na rede
+
+Protocolos
+	--> Regras para conversação entre hosts
+	--> nada mais são do que normas (regras) para comunicação entre dispositivos, computadores e etc.
+
+------------------------
+| INFORMAÇÕES DE REDE: |
+------------------------
+
+IP        --> 192.168.86.101 --> endereço de uma máquina específica
+                             |-> serve para identificação de máquinas específicas
+
+Network   --> 192.168.86.0   --> referencia a rede de modo geral
+
+Netmask   --> 255.255.255.0  --> define qual será a porção do endereço de rede será destinado a rede
+                             --> e qual porção será definida para hosts
+
+Broadcast --> 192.168.86.255 --> representa toda a rede (última instância de IP da rede)
+
+Gateway   --> 192.168.86.1   --> endereço de locomoção para outros endereços de máquinas externas (além da rede local)

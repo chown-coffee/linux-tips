@@ -1,0 +1,5 @@
+traça a rota realizada nos servidores pelo pacote até chegar no servidor de destino
+
+traceroute6 www.site.com
+	--> similar: traceroute -6 www.site.com
+	--> realiza a rota utilizando apenas IPv6

@@ -1,0 +1,3 @@
+É capaz de dar nomes para endereços IP's (através de nameserver)
+
+É possível configurar o DNS pelo arquivo: /etc/resolv.conf
