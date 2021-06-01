@@ -1,0 +1,25 @@
+são programas instalados na máquina, que escutam uma determinada porta para prover alguma comunicação (um determinado tipo de serviço, local ou para a internet)
+
+EXEMPLOS:
+
+web: rodam na porta 80
+web [security (https)]: rodam na porta 443
+ssh: rodam na porta 22
+ftp: 21
+smtp: 25
+pop: 110
+pop [security]: 993
+imap: 143
+
+quando um serviço é instalado na máquina, o mesmo pode operar de duas formas: como daemon ou via inetd
+	--> também pode-se disparar esses serviços via systemd.socket (que opera semelhante ao inetd)
+
+quando o serviço é operado como daemon, ele provê uma grande quantidade de conexões de uma vez, pois o serviço está ativo o tempo todo em memória e geralmente é executado mais de um processo (os chamados forks) para que atenda várias conexões de uma forma muito rápida
+
+quando o serviço é executado com inetd, xnetd ou systemd.socket, o binário é chamado apenas no momento em que será executado. É um cenário interessante quando se tem uma quantidade de conexões extremamente baixa e/ou quando se tem uma quantidade de memória muito baixa e/ou poucos recursos de hardware para oferecer um serviço de rede
+
+É possível 2 serviçoes escutarem a mesma porta?
+	--> Depende. Caso os serviços estiverem configurados para o mesmo IP (ou estiverem escutado TUDO o que passa por uma determinada porta), então não. Caso os serviços estejam escutando IP's diferentes, então sim.
+	--> No comando ss, em "Local Address:Port", 0.0.0.0:[porta] referencia que um determinado processo está escutando em TODAS as portas da rede
+		--> 127.0.0.1:[porta], por outro lado, o processo está escutando APENAS na porta especificada referente ao loopback, qualquer outro endereço ip possui essa mesma porta disponível para serviços.
+		--> É um protocolo de segurança também, restringir o uso das portas pelos serviços

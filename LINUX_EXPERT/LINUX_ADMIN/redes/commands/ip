@@ -20,3 +20,43 @@ ip addr add 192.168.0.215/24 dev enp6s0
 
 ip -6 addr add fd00:f0ca:f0ca:f0ca::d40/64 dev enp6s0
 	--> adiciona um endereço de IPv6 na rede (no dispositivo enp6s0)
+
+ip route ls # or # ip route list # or # ip r ls
+	--> lista as rotas de rede
+	--> 192.168.1.0/24 dev enp6s0 proto kernel scope link src 192.168.1.100 metric 100
+	    |__> rota associada a placa de rede                   |__> ip da máquina
+
+ip route add 192.168.2.0/24 dev enp0s3
+	--> adiciona uma rota para o sistema, indicando qual dispositivo (placa) de rede será usada para se comunicar com a rota
+	--> 192.168.2.0/24 --> indica o enderço de rede
+	--> dev enp0s3 --> indica o dispositivo (placa de rede) utilizado para a comunicação
+
+ip route add 192.168.4.0/24 via 192.168.0.212 [dev enp6s0 (nome da interface de rede, variável) -- optional]
+	--> semelhante ao comando anterior, porém é aplicado quando a placa de rede da máquina executando o comando não tem acesso ao endereço de rede adicionado (192.168.4.0/24), mas outra (192.168.0.212) possui o acesso. Então é dito que o tráfego de rede do endereço adicionado passará pela outra máquina
+
+ip route del 192.168.2.0/24
+	--> deleta a rota especificada
+
+ip route add default via 192.168.0.4
+	--> similar: route add default gw 192.168.0.4
+	--> adiciona um gateway padrão para a interface de rede
+	--> é necessário possuir este gateway padrão para acesso a internet
+	--> o primeiro passo antes de acessar um host (interno ou externo) é verificar se o mesmo tem conexão local e para isso é utilizado o gateway padrão (rota default)
+	--> sem ela, não é possível realizar nenhum tipo de conexão
+
+ip route add default via 192.168.0.5 metric 1
+	--> adiciona um segundo (terceiro e por ai vai) gateway padrão nas rotas
+	--> assim que é criado um gateway padrão, a metrica do mesmo é 0
+	--> portanto, para adicionar um segundo gateway é necessário (no mínimo) ele possuir uma métrica diferente
+	--> um terceiro gateway padrão fosse adicionado, por exemplo, poderia ser colocada uma métrica 2, nesse caso
+	--> quanto menor o número da métrica, mais chances a mesma tem de ser escolhida para ser utilizada na tabela de roteamento
+
+ip route del default [IP -- optional]
+	--> similar: route del default gw 192.168.0.6
+	--> remove o gateway padrão da máquina
+
+ip link ls
+	--> mostra as interfaces de rede
+
+ip -br a
+	--> lista os ips e redes de forma mais organizada e simplificada

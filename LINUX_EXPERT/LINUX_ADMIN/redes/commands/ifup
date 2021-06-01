@@ -1,0 +1,2 @@
+ifup enp0s6 # any network board name in use
+	--> sobe uma rede na placa

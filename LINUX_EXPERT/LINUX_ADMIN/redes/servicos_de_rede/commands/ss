@@ -1,0 +1,18 @@
+evolução do comando netstat
+
+ss -lnt
+	--> lista todas as portas que estão escutando conexões
+	--> -l --> listar
+	--> -n --> não resolver para nomes
+	--> -t --> listar apenas os serviços tcp
+
+ss -lnp
+	--> lista todas as portas em uso e seus devidos processos
+
+ss -lntp
+	--> junção dos dois comandos acima
+
+ss -lt
+	--> semelhante ao comando acima, porém, ao invés de ser listado o número da porta é listado qual serviço é escutado por aquela porta
+	--> IMPORTANTE: o serviço listado aqui é baseado no mapeamento do arquivo /etc/services e não é baseado no serviço que está de fato rodando na porta
+		--> portanto, caso o serviço rodando na porta esteja fora do mapeamento, não será ele o listado. Nesse caso, seria utilizado o comando ss -lntp

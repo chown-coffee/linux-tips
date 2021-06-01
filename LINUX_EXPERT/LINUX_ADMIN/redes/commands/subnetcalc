@@ -1,0 +1,5 @@
+realiza o cálculo de rede para um endereço IP passado
+
+subnetcalc [ENDEREÇO IP]
+	--> mostra informações de um IP especificado
+	--> funciona tanto para IPv4 quanto para IPv6

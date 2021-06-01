@@ -1,0 +1,2 @@
+ifdown enp0s6 # any network board
+	--> para um processo de rede na placa de rede especificada

@@ -1,0 +1,8 @@
+gerencia os serviços da máquina (máquinas que se utilizam do systemd)
+
+systemctl list-units
+	--> lista todos os units rodando da máquina (pelo systemd)
+
+systemctl list-units|grep -i service
+	--> similar: systemctl list-units --type=service
+	--> semelhante ao comando acima, porém trás apenas os serviços

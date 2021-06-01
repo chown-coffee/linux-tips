@@ -1,0 +1,2 @@
+dhclient enp0s6 # any network board
+	--> força a renovação de um endereço de rede

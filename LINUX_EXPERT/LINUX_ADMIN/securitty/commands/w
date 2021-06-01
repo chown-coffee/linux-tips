@@ -1,0 +1,10 @@
+Exibe os usuários logados na máquina, o terminal de acesso e o IP de origem
+
+Possui uma coluna chamada "WHAT" que mostra o que o usuário está fazendo no momento
+
+USER         TTY          FROM         LOGIN@       IDLE         JCPU         PCPU         WHAT
+coffee       tty1         192.168.0.20 07:24        2.00s        0.05s        0.01s        sshd: guiafoca
+coffee       pts/0        168.168.0.20 08:48        20.00s       0.03s        0.03s        vim
+
+TTY:
+	pts/0 --> indica que o usuário está logado remotamente

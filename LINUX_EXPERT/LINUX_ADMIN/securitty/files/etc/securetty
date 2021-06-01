@@ -1,0 +1,3 @@
+exibe os terminais (tty) que o usuário root tem acesso
+
+caso um tty seja comentado, o usuário root não poderá se logar a ele.

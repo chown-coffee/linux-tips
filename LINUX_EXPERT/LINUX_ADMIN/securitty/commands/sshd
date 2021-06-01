@@ -1,0 +1,5 @@
+Gerencia o serviço do ssh
+
+sshd -t
+	--> realiza um teste nas configurações do ssh a partir do arquivo de configuração '/etc/ssh/sshd_config'
+	--> caso haja algum erro na configuração, ele será indicado

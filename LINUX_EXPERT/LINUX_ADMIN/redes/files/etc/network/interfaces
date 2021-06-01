@@ -1,0 +1,61 @@
+arquivo que armazena e gerencia as interfaces de rede presentes na tabela de roteamento do computador
+
+ARQUIVO:
+
+```
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+# configuração do lo
+auto lo
+	# auto indica qual interface de rede subirá no boot da máquina
+iface lo inet loopback
+	# instancia o endereço 127.0.0.1 para IPv4 e ::1 para IPv6 como localhost
+
+# The primary network interface
+auto enp0s6
+iface enp0s6 inet static # o endereço IP será atribuído estaticamente e não dinamicamente
+	address 192.168.0.211/24
+	gateway 192.168.0.6
+	# realizar logs
+	up echo "Subiu" >>/tmp/network.connection.log # grava no log sempre que a rede subir
+	down echo "Caiu" >>/tmp/network.connection.log # grava no log sempre que a rede cair
+
+iface enp0s6 inet6 static
+	address fd00:f0ca::211
+	netmask 64
+```
+
+```
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+# configuração do lo
+auto lo
+	# auto indica qual interface de rede subirá no boot da máquina
+iface lo inet loopback
+	# instancia o endereço 127.0.0.1 para IPv4 e ::1 para IPv6 como localhost
+
+# The primary network interface
+# auto enp0s6 # sem este comando, a placa de rede não será ativada ("subida") durante o boot
+# iface enp0s6 inet static # o endereço IP será atribuído estaticamente e não dinamicamente
+# 	address 192.168.0.211/24
+# 	gateway 192.168.0.6
+
+iface enp0s6 inet dhcp # permite atribuir um ip dinamicamente
+
+iface enp0s6 inet6 static
+	address fd00:f0ca::211
+	netmask 64
+```
+
+comando auto: irá subir sempre (de forma forçada) a configuração de rede no momento de boot
+
+comando allow-hotplug: irá subir a configuração de rede apenas quando houver um link (funcional) de rede
+	--> caso haja uma desconecção do cabo, caia o acesso a internet ou qualquer coisa do tipo, a configuração da placa de rede será parada automaticamente, caso utilize o allow-hotplug e reconectará assim que o link retornar (semelhante ao dhcp)

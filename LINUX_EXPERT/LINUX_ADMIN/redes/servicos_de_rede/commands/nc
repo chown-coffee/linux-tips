@@ -1,0 +1,7 @@
+netcat --> canivete suiço de serviços e conexões de rede
+
+nc -l -p [PORTA]
+	--> começa a escutar uma determinada porta (agindo como um servidor)
+
+nc localhost [PORTA]
+	--> conecta-se a uma determinada porta (agindo como cliente)
