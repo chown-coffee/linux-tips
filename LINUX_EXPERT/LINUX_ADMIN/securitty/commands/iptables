@@ -1,0 +1,14 @@
+firewall presente no sistemas linux
+é uma versão um pouco mais antiga, atualmente o nftables é preferível a ser utilizado
+
+iptables -L -n
+	--> -L : list
+	--> -n : saída numérica para endereçoes e portas
+
+iptables -A INPUT -s 127.0.0.1 -p tcp --dport 22 -j DROP
+ --> -A : adicionar uma regra ao final da chain
+ --> INPUT : tudo que chega na máquina
+ --> -s : source -- origem
+ --> -p : protocolo a ser tratado
+ --> --dport : especifica a porta de destino da conexão (porta da máquina de servidor)
+ --> -j : target

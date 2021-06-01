@@ -1,0 +1,2 @@
+mostra informações de um usuário, assim com informações de login do mesmo
+é considerado um serviço inseguro de se ter acesso remotamento (pelo daemon fingerd), pois pode expor padrões de comportamento de um usuário.

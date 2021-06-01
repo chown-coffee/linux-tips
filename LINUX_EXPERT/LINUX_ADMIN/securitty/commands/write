@@ -1,0 +1,6 @@
+permite escrever uma mensagem pra um usuário em uma tty
+
+write [user] [terminal]
+	--> EX : write root tty1
+		--> escreve a mensagem
+		--> ao final da mensagem, pressiona-se [CTRL + d]

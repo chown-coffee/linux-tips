@@ -1,0 +1,11 @@
+mostra algumas informações sobre o host:
+	nome de host da máquina
+	ícone de exibição
+	tipo de chassis
+	ID da máquina
+	ID do boot
+	Sistema de virtualização (em caso de utilização de VM)
+	Sistema operacional
+	kernel
+	arquitetura
+	modelo de hardware (em caso de máquina física)

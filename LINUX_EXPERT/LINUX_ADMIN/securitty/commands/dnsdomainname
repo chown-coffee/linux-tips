@@ -1,0 +1,4 @@
+mostra o dns de domínio da máquina
+
+dnsdomainname
+	--> semelhante: hostname -d

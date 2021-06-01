@@ -1,0 +1,10 @@
+mostra informações baseadas no arquivo /etc/hosts
+
+hostname
+	--> mostra o nome de host da máquina
+
+hostname -f
+	--> mostra o nome de host da máquina, juntamente com o domínio
+
+hostname -d
+	--> mostra o nome de domínio da máquina

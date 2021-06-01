@@ -1,0 +1,16 @@
+mostra usuário conectado, terminal de conexão, data e hora de conexão
+
+who -a
+	--> mostra todos os detalhes de conexão do usuário, como PID, maiores detalhes dos terminais utilizados e etc.
+
+who -b
+	--> mostra a data e o horário de inicialização da máquina
+
+who -s
+	--> mostra um formato um pouco mais curto do comando (semelhante ao original)
+
+who -q
+	--> mostra os nomes dos usuários conectados e o número total de usuários conectados na máquina
+
+who i am
+	--> semelhante ao comando whoami, porém lista algumas informações a mais, como terminal utilizado pelo usuário, data e hora de login e ip de origem

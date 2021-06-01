@@ -1,0 +1,19 @@
+Arquivo que representa hosts com permissão de conexão a máquina
+
+# /etc/hosts.allow: list of hosts that are allowed to access the system.
+#                   see the manual pages hosts_access(5) and hosts_options(5)
+# Example:    ALL: LOCAL @some_netgroup
+#             ALL: .foobar.edu EXCEPT terminalserver.foobar.edu
+#
+# If you're going to protect the portmapper use the name "rpcbind" for the
+# daemon name. See rpcbind(8) and rpc.mountd(8) for further information.
+#
+sshd: LOCAL
+	--> indica que todos os hosts de conexão local poderão ter acesso a máquina
+	--> hosts de conexão local: localhost, hosts cadastrados no /etc/hosts e qualquer hosts cadastrados como DNS
+
+sshd: 127.0.0.1, 192.168.0.21
+	--> apenas os IP's indicados terão acesso a máquina
+
+sshd: .guiafoca.org EXCEPT bad.guifoca.org
+	--> é liberado acesso a todos os hostname com sufixo .guiafoca.org, exceto bad.guiafoca.org
