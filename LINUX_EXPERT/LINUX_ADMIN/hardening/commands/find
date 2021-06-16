@@ -1,0 +1,7 @@
+É possível utilizar o comando find para procurar binários com SUID e/ou SGID setados na máquina.
+
+Buscando binários com SUID setado:
+	find . -perm /4000
+
+Buscando binários com SGID setado:
+	find . -perm /2000

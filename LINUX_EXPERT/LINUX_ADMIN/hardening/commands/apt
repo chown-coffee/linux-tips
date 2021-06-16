@@ -1,0 +1,7 @@
+apt-get update
+	--> similar: apt update
+	--> baixa as instalações do repositório
+
+apt-get -f -u upgrade
+	--> similar: apt -f -u upgrade
+	--> aplica as atualizações no sistema (e nos pacotes)

@@ -1,0 +1,4 @@
+lista os limites que um usuário pode ter durante a sessão na máquina
+
+ulimit -a
+	--> lista os limites do usuário atual na máquina

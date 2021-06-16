@@ -1,0 +1,46 @@
+tar é um agregador de arquivos. Ele realiza a junção e separação de arquivos.
+
+tar cvf /tmp/arquivo.tar /usr/bin
+	--> c --> realiza a junção de arquivos
+	--> v --> verbose - detalha as ações do tar
+	--> f --> indica o caminho/arquivo do arquivo compactado
+	      --> no caso acima, o arquivo indicado é o /tmp/arquivo.tar
+	--> /usr/bin é a pasta que está sendo compactada
+
+compactadores:
+	gzip
+		--> excelente para binários, possui uma ótima performance
+
+	bzip2
+		--> excelente para compactação de texto
+
+	xz
+		--> também excelente para binários
+		--> tem uma compactação ainda maior que a do gzip, porém é mais lento e faz mais utilização de CPU
+
+Método de compactação antigo:
+	tar -cvf - /usr/bin|gzip -c >/tmp/arquivo.tar.gz
+	--> realiza o agrupamento dos arquivos dentro de /usr/bin com o tar e manda para a saída padrão (-)
+	--> manda a saída padrão como conteúdo para o gzip (|), realiza a compactação (-s) e redireciona para um arquivo de destino que conterá o conteúdo final do arquivo agragado e compactado (/tmp/arquivo.tar.gz)
+
+Método de descompactação antigo:
+	gzip -d arquivo.tar.gz && tar xvf arquivo.tar
+	--> realiza a descompactação do arquivo com o gzip (-d) e logo depois desagrupa os arquivos com o tar (x --> realiza o desagrupamento, v --> verbose, detalha as ações realizadas pelo tar e -f indica o arquivo)
+
+Método de compactação atual:
+	tar -cvzf /tmp/arquivo.tar.gz /usr/bin
+		--> faz o agrupamento, mas já com a compactação (z --> a compactação com o gz)
+	tar -cvjf /tmp/arquivo.tar.bz2 /usr/bin
+		--> semelhante ao comando acima, porém compactando com bzip2 (-J)
+	tar -cvJf /tmp/arquivo.tar.xz /usr/bin
+		--> semelhante ao comando acima, porém compactando com xz (-j)
+
+Método de decompactação atual:
+	tar -xvzf /tmp/arquivo.tar.gz
+		--> descompacta arquivos compactados com gzip e os desagrupa
+	tar -xvjf /tmp/arquivo.tar.gz
+		--> descompacta arquivos compactados com bzip2 e os desagrupa
+	tar -xvJf /tmp/arquivo.tar.gz
+		--> descompacta arquivos compactados com xz e os desagrupa
+
+* Os métodos antigos de compactação utilizando o tar, ainda podem ser úteis para utilizar compactadores não suportados por padrão no tar

@@ -1,0 +1,16 @@
+realiza o gerenciamento de contas de usuários
+
+chage -l user
+	--> lista as configurações de uma conta (última mudança de senha, expiração da conta, número de dias entre trocas de senhas e etc.)
+
+chage -d 2017-01-01 user
+	--> muda a data da última mudança de senha
+
+chage -E 2017-01-20 user
+	--> muda a data de expiração de uma senha
+
+chage -m 2 user
+	--> troca o número mínimo de dias para a troca de senha
+
+chage -M 42 user
+	--> muda o número máximo de dias entre a troca de senha

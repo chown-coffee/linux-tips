@@ -1,0 +1,10 @@
+w
+ --> mostra informações de todos os usuários loganos atualmente na máquina
+
+who
+	--> mostra informações do usuário atual da máquina
+
+last
+	--> mostra as últimas conexões na máquina
+	last usuario
+		--> mostra as últimas conexões de um usuário específico na máquina

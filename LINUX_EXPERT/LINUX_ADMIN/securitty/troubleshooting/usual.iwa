@@ -1,0 +1,7 @@
+trio de ferramentas interessantes a se utilizar em um troubleshooting:
+	- df
+		--> mostra a utilização do espaço em disco
+	- free
+		--> exibe o uso de memória
+	- top
+		--> verifica os processos utilizados
