@@ -1,0 +1,19 @@
+make oldconfig
+  * trará as diferenção entre a versão do kernel presente na máquina e o a versão a ser compilada
+
+make clean
+  * limpa a geração da compilação presente do kernel
+
+make
+  * compilará o kernel
+  * make -j [número de CPU's] --> indica o número de CPU's a serem utilizados na compilação
+
+make modules_inteall
+  * instalará os modulos compilados (marcados com `m` na compilação)
+  * serão instalados por padrão na pasta /lib/modules, acompanhados da versão do kernel
+
+make install
+  * instalará o kernel para ser utilizado no boot
+
+update grub
+  * irá atualizar o grub, com todas as versões presentes

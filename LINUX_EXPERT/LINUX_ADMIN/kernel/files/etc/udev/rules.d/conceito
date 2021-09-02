@@ -1,0 +1,3 @@
+Aqui também são representadas as mesmas regras dos dispositivos presentes em /lib/udev/rules.d
+
+Este é o local recomendado para a alteração (remoção ou adição) das regras

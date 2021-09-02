@@ -1,0 +1,19 @@
+Gerencia toda a parte de cessão, remoção e colocação de módulos
+
+insmod --> carregamento (link simbólico para o kmod)
+
+lsmod --> listagem (link simbólico para o kmod)
+
+rmmod --> remoção (link simbólico para o kmod)
+
+modprobe module
+	--> carrega o módulo desejado já com suas dependências
+
+modproble -r module
+	--> realiza a remoção do módulo desejado
+
+modproble -r --remove-dependencies module
+	--> realiza a remoção do módulo desejado já com suas dependências
+
+modprobe -f [ou --force] [OPTIONS] module
+	--> Realiza o comando do modprobe desejado a força

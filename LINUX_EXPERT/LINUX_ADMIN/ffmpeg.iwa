@@ -1,0 +1,2 @@
+# record command
+ffmpeg -f x11grab -video_size 2560x1080 -framerate 24 -probesize 150M -i :0.0 -f pulse -ac 1 -i alsa_output.pci-0000_00_1b.0.iec958-stereo.monitor -f pulse -ac 1 -i alsa_input.usb-Kingston_HyperX_Cloud_Revolver_S_000000000000-00.mono-fallback -filter_complex "[1:a][2:a]amix=inputs=2:duration=shortest[a]" -map 0 -map "[a]" -vcodec libx264 -tune film -acodec aac -strict experimental -b:v 700k -b:a 192k -pix_fmt yuv420p -shortest -vf scale=2560x1080 testando_script.mp4

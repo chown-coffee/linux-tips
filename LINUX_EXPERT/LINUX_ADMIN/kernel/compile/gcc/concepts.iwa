@@ -1,0 +1,47 @@
+gcc --> realiza a compilação do arquivo em C
+
+#--            --#
+#-- PARÂMETROS --#
+#--            --#
+
+-o --> especifica o nome do arquivo de saída:
+  * Ex: gcc -o exe main.c
+
+-W --> especifica quais alertas (warnings) serão exibidos na compilação
+  * Ex: gcc -Wall main.c
+  *          ^-- exibirá todos os alertas na tela
+
+-c --> compilará o arquivo .c para object (arquivo .o)
+  * Ex: gcc -c main.c
+  *         ^-- criará um arquivo chamado main.o,que poderá ser transformado em binário com o comando `gcc main.o`
+
+-static --> compilará o arquivo sem as shared libs, com as bibliotecas estaticamente imbutidas no arquivo binário
+
+#--          --#
+#-- COMANDOS --#
+#--          --#
+
+ldd binário_c
+  * é mostrado quais bibliotecas são utilizadas pelo arquivo (shared libs)
+  * shared libraries são bibliotecas que podem ser compartilhadas com qualquer arquivo binários no linux
+  * uma forma de não utilizar shared libs, mas sim realizar a compilação de um arquivo para um binário com bibliotecas estáticas, pode-se utilizar a opção `-static` do gcc
+    Ex: gcc -static main.c
+
+strace --> faz um rastreio para entender tudo o que o programa está executando internamente
+  * Ex: strace binário
+  * Utilização interessante em engenharia reversa:
+    strace binário 2>&1 | grep -E "(open|rename|write)"
+      grep -E --> para utilizar expressões regulares --> traz tudo na saída com os comandos open, rename e/ou write
+
+gdb --> GNU debuger, realiza o debug de uma aplicação
+
+#--         --#
+#-- MODULOS --#
+#--         --#
+
+/etc/ld.so.conf --> arquivo que possui o caminho padrão de pesquisa de bibliotecas no sistema
+
+/etc/ld.so.conf.d --> diretório com arquivos de configuração para os módulos
+
+LD_LIBRARY_PATH --> variável de ambiente que armazena o caminho de pesquisa das bibliotecas dinâmicas
+  * o diretório que estiver setado na variável, será o primeiro a ser pesquisado

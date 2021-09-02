@@ -1,0 +1,5 @@
+Vai tentar construir o initramfs baseado no suporte aos seus dispositivos atuais
+Esse comando é referente a distribuições baseadas em debian.
+Distribuições baseadas em Arch Linux, por exemplo, poderiam utilizar o mkinitcpio ou o dracut, por exemplo
+
+update-initramfs -c -t -k $(uname -r)

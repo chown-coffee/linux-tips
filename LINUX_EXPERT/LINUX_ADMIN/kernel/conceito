@@ -1,0 +1,5 @@
+É o coração do sistema operacional
+Realiza a comunicação entre o hardware e os aplicativos
+Possui módulos (popularmente conhecidos como drivers)
+Módulos permite carregar dinamicamente recursos no sistema
+Existe também a possibilidade de colocar recursos estáticos no kernel, para não haver a necessidade de subir diversos módulos no sistema

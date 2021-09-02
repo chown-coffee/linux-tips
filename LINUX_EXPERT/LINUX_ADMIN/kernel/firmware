@@ -1,0 +1,9 @@
+É um binário utilizado como um módulo no sistema linux, porém não apresenta seu código fonte, apenas um binário exevutável.
+É utilizado por empresas terceiras que não desejam ter seu "segredo" revelado através de um módulo.
+
+Verificando as firmwares:
+
+* Entra-se no diretório /lib/firmware
+* Executa-se o comando
+	updte-initramfs -c -t -k $(uname -r)
+		caso seja listado "Missing module(s)", será necessário instalar o módulo listado

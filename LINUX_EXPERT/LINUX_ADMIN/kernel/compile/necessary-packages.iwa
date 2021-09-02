@@ -1,0 +1,26 @@
+debian:
+
+gcc
+g++
+libc6-dev
+libncurses5-dev
+libssl-dev
+libelf-dev
+bin86
+make
+bison
+flex
+
+O kernel está localizado em /usr/src
+É necessário também, antes da compilação:
+  * Editar o .config, dentro do kernel que irá ser compilado.
+      É necessário remover o valor do campo `CONFIG_SYSTEM_TRUSTED_KEYS` e deixá-lo vazio, da seguinte forma
+        CONFIG_SYSTEM_TRUSTED_KEYS=""
+      Esse campo, tentará validar um certificado, que ainda não estará disponível durante a compilação do kernel.
+  
+  * Desativar a opção `Compile te kernel with debug info`
+      Dentro do kernel a ser compilado, rodar o comando `make menuconfig`
+      Ir na (possivelmente) última opção: `Kernel hacking`
+      Ir na (possivelmente) segunda opção: `Compile-time checks and compiler options -->`
+      Desativar a (possivelmente) primeira opção: `Compile the kernel with debug info`
+      Exit and save
