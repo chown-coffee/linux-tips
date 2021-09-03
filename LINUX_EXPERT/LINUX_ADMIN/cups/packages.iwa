@@ -1,0 +1,16 @@
+debian:
+
+cups
+cups-daemon --> daemon cups
+cups-server-common --> algumas extensões interessantes para o cups, como banners de acesso ao cups através de páginas web
+
+pacotes adicionais definições:
+hplip
+hplip-cups # não existe por padrão no repositório
+cups-pdf
+smbclient
+foomatic-db
+foomatic-db-compressed-ppds # conflict com foomatic-db
+openprinting-ppds
+printer-driver-all
+cifs-utils

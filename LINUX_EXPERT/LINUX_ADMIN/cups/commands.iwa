@@ -1,0 +1,5 @@
+lpq --> integração com o cups para impressão através do terminal
+
+lpadmin --> configurações do cups através da linha de comando
+
+lpstat --> retorna o status de uma impressora
