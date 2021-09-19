@@ -1,0 +1,54 @@
+Novo systema de inicialização da máquina
+Assim como no systemV, também se utiliza dos runlevels, porém aqui são chamados de targets e possuem uma sintaxe diferente
+
+comandos:
+
+systemctl start service # or service.service
+  - inicia um serviço, e.g. systemctl start sshd # or sshd.service
+  - alguns serviços também precisam ser iniciados como usuário (e.g. systemctl start --user service)
+
+systemctl stop service
+  - para um serviço, e.g. systemctl stop sshd
+
+systemctl restart service
+  - reinicia um serviço, e.g. systemctl restart sshd
+
+systemctl status service # or service.service
+  - mostra o status detalhado do service no momento
+
+systemctl is-active service # or service.service
+  - mostra se o serviço está rodando (active) ou não (innactive)
+
+systemctl enable serive # or service.service
+  - adiciona o service desejado no boot da máquina
+  - com o parâmetro `--now` (e.g. systemctl enable --now service.service), além de adicionar o service no boot, ele também já inicia o service nesse momento (com o comportamento do systemctl start service)
+
+systemctl disable service # or service.service
+  - remove o service desejado no boot da máquina
+
+systemctl isolate rescue # or rescue.target
+  - entra no modo (target) de rescue
+  - similar ao `init 1` do systemV
+
+systemctl isolate multi-user # or multi-user.target
+  - entra no modo multi-user
+  - similar ao `init 3` apontado no systemV (lembrando que os targets de 2 à 5 no systemV, podem variar dependendo da máquina, portanto não é padrão ser o init 3)
+
+systemctl isolate graphical # or graphical.target
+  - entra no modo de interface gráfica
+  - similar ao `init 5` mostrado no systemV (lembrando do aviso no comando anterior ^)
+
+systemctl get-default
+  - retorna o target default do systemD
+
+systemctl set-default target # or target.target
+  - muda o target padrão do systemD, e.g. systemctl set-default multi-user.target
+  - cria-se um link simbólico /etc/systemd/system/default.target apontando para /lib/systemd/system/serice.target (no exemplo acima, /lib/systemd/system/multi-user.target)
+
+systemctl poweroff
+  - desliga a máquina
+  - similar ao `init 0` do systemV
+
+systemctl reboot
+  - reinicia a máquina
+  - similar ao `init 6` do systemV

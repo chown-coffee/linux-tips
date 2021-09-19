@@ -1,0 +1,31 @@
+Init antigo do sistema.
+Utilizava-se de runlevels, que variavam de 0 à 6, sendo 3 deles padrão:
+-- -- --
+init 0 - shutdown - desliga a máquina (executa os scripts em /etc/rc0.d/* e posteriomente realiza o halt)
+-- -- --
+init 1 - security - modo de segurança/manutenção. "Single user mode" ou modo de emergência, sem internet e sem multitask, apenas acesso root.
+-- -- --
+init 6 - reboot   - reinicialização do sistema
+-- -- --
+
+Os modos de 2 à 5 variam para diferentes distribuições linux. Exemplo:
+-- -- --
+init 2 - Modo sem internet, porém multitask é suportado
+-- -- --
+init 3 - Modo com internet e com multitask, porém sem GUI
+-- -- --
+init 4 - Similar ao runlevel 3, reservado para outros propósitos de pesquisa
+-- -- --
+init 5 - Modo com interface gráfica (GUI)
+-- -- --
+
+Existe ainda um oitavo runlevel:
+-- -- --
+init s - Estado de manutenção. Neste estado, apenas o console do sistema é usado como terminal.
+-- -- --
+O modo acima, também pode ser acessado com: init S, init m ou init M.
+
+As configurações de inicialização da máquina, no SystemV, ficavam em um arquivo /etc/inittab
+
+outros comandos:
+runlevel --> verifica o runlevel atual da máquina

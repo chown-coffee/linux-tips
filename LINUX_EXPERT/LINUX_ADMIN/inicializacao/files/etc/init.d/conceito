@@ -1,0 +1,6 @@
+Aqui estão presentes vários serviços que eram controlados pelo systemV.
+Era possível reiniciar e controlar esses serviços através do systemV. Exemplo:
+
+/etc/init.d/ssh stop
+/etc/init.d/ssh start
+/etc/init.d/ssh restart
