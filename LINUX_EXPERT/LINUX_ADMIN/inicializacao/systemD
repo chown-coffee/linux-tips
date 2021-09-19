@@ -1,4 +1,5 @@
 Novo systema de inicialização da máquina
+É um inicializador em paralelo, carregando os processos em multi-thread
 Assim como no systemV, também se utiliza dos runlevels, porém aqui são chamados de targets e possuem uma sintaxe diferente
 
 comandos:

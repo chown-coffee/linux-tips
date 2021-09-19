@@ -1,0 +1,41 @@
+Command line interface do grub
+É possível recuperar o sistema caso algo dê errado, assim como outras possíveis configurações
+
+comandos:
+
+ls
+  --> mostra os file systems disponíveis no grub
+  --> exemplo de saída: (hd0)  (hd0,msdos5)  (hd0,msdos1)
+
+ls (file system)
+  --> e.g. ls (hd0) --> mostra o conteúdo dentro do file system
+  --> apenas os file systems em que o sistema esteja configurado mostrarão alguma saída, outros file systems mostrarão um erro como o seguinte `error: unknown filesystem`
+
+ls (filesystem)/diretório
+  --> mostra o conteúdo do diretório
+
+set prefix=(filesystem)/boot/grub
+  --> atribui o prefixo da configuração do grub (arquivo grub.cfg)
+
+set root=(filesystem)
+  --> atribui a raíz do filesystem do sistema
+
+insmod linux
+  --> chama o módulo do kernel linux
+
+insmod normal
+  --> siga de maneira 'normal' o boot
+
+normal
+  --> cria-se uma entrada para o grub com as configurações realizadas acima, para ser possível o boot no sistema
+
+linux /boot/vmlinuz-4.19.0-13-amd64 root=/dev/sda1
+  --> vmlinuz-4.19.0-13-amd64 indica qual kernel linux será utilizado pelo grub (pode ser utilizada qualquer versão disponível)
+  --> root=/dev/sda1 indica a partição da raíz. Caso a raíz (/) esteja atribuída para outra partição (/dev/sda3, por exemplo), deve ser trocado o parâmetro passado para o root
+
+initrd /boot/initrd.img-4.19.0-13-amd64
+  --> indica qual a imagem de init que será utilizada pelo grub
+  --> caso seja uma outra versão de imagem (diferente da acima: 4.19.0-13), o parâmetro passado deve ser ajustado
+
+boot
+  --> realiza o boot da máquina

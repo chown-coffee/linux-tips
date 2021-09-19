@@ -1,0 +1,13 @@
+exemplos de arquivos no /etc/grub.d
+
+00_header
+05_debian_theme
+10_linux
+20_linux_xen
+30_os-prober
+30_uefi-firmware
+40_custom
+41_custom
+README
+
+o número a frente do arquivo representa a ordem de chamada para o grub.cfg

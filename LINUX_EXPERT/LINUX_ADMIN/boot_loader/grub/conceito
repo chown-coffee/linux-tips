@@ -1,0 +1,4 @@
+Responsável pelas configurações iniciais no boot da máquina. Realiza a checagem do cmos, bios, configurações de hardwares e setups iniciais (como os discos, as montagens e suas configurações com o fstab).
+Após isso, também é feita uma cheacagem de disco. Nos 512 bytes iniciais do disco existe o MBR, responsável por subir inicialmente o sistema.
+
+ordem de inicialização - MBR (local de disco), GRUB (boot loader), kernel, init (primeiro processo do sistema. Existe também o initrd, que é a imagem do init), sistema operacional

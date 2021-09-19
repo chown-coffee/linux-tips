@@ -1,0 +1,4 @@
+Arquivo de configuração do grub
+Toda configuração a ser realizada no grub pelo usuário, deverá ser feita nesse arquivo
+
+Após a mudança no arquivo, é preciso executar o comando: $(update-grub)

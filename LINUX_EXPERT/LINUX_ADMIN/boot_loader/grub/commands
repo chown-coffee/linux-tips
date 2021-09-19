@@ -1,0 +1,5 @@
+grub-mkconfig --> monta a configuração do grub (grub.cfg) e mostra gera a saída na tela com o arquivo (stdout)
+
+grub-mkconfig > /boot/grub/grub.cfg --> gera uma nova imagem de configuração do grub e atualiza o boot
+
+grub-mkconfig -o /boot/grub/grub.cfg --> similar ao comando de cima
