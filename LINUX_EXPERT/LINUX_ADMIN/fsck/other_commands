@@ -1,0 +1,5 @@
+e4defrag /dev/particao # ou /dev/disco # ou arquivo # ou diretorio
+  --> realiza a desfragmentação de um disco, partição, arquivo ou diretório
+
+e4defrag -c [arquivo,partição,disco,diretório]
+  --> realiza a checagem e mostra quais arquivos estão fragmentados

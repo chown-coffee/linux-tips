@@ -1,0 +1,7 @@
+as hashs que acompanham as ISO's são criadas baseando-se na imagem iso. Qualquer alteração na iso, acarretará em uma mudança brusca na hash gerada, podendo facilmente ser detectada
+
+gerando a hash (sha256sum) para verificação (exemplo com uma imagem do ubuntu desktop 20.10):
+
+$ sha256sum ubuntu-20.10-desktop-amd64.iso
+saída esperada:
+$ 3ef833828009fb69d5c584f3701d6946f89fa304757b7947e792f9491caa270e *ubuntu-20.10-desktop-amd64.iso

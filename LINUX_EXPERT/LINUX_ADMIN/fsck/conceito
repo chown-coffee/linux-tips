@@ -1,0 +1,5 @@
+fsck é um comando para realizar checagens de disco
+
+É importante que a partição esteja desmontada ao se realizar a checagem, caso contrário o comand abortará e não realizará a checagem, por possibilidades de dar merda.
+
+É possível realizar a checagem a força na partição/disco, porém não é o recomendado.

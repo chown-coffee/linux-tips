@@ -16,3 +16,6 @@ umount [partićão]
 
 mount | grep [partićão]
 	# mostra onde determinada partićão está montada
+
+mount -a
+  # realiza a montagem de todas as partições presentes no arquivo do fstab

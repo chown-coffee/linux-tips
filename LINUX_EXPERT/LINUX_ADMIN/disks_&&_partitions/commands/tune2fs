@@ -7,6 +7,7 @@ tune2fs -c 10 [partićão]
 	* no exemplo acima, depois de 10 montagens, será feito um fsck (checagem de saúde do disco)
 
 tune2fs -i 180 [partićão]
+  * similar a `tune2fs -i 180d`
 	* muda a quantidade em dias do quanto um disco ficará ativo sem ser checado (fsck)
 	* no caso acima, foi especificado 180 dias
 	* Isso é muito útil para servidores, que podem passar meses sem serem restartados

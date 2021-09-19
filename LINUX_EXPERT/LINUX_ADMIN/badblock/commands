@@ -1,0 +1,15 @@
+see `badblocks --help` && `man badblocks`
+
+badblocks -nsv -c 1024 /dev/particao
+  --> s --> mostra o status (o que está acontecendo)
+  --> v --> verboso
+  --> n --> apenas verifica e mostra caso exista algum badblock, porém não realiza nenhuma alteração ou isolamento. Este parâmetro necessita que o disco esteja desmontado
+  --> c --> quantos blocos serão testados de uma vez
+  --> e.g. badblocks -nsv -c 1024 /dev/sda1
+
+badblocks -sv -c 1024 /dev/particao
+  --> semelhante ao anterior, porém, sem o parâmetro `-n`, é realizada uma varredura mais objetiva
+
+badblocks -wsv -c 1024 /dev/particao
+  --> w --> também realiza as checagens, assim como o `-n`, porém, no parâmetro w, caso algum badblock seja encontrado, ele já será isolado
+  --> essa opção destrói o file system para que sejam isolados todos os badblocks, portanto, use com moderação.

@@ -1,0 +1,42 @@
+fsck /dev/particao # ou /dev/disco
+  --> realiza a checagem da partição especificada
+  --> faz as correções necessárias caso seja encontrado algum erro
+
+fsck -N /dev/particao # ou /dev/disco
+  --> fake, apenas testa de o fsck executa
+
+fsck -n /dev/particao # ou /dev/disco
+  --> realiza a checagem da partição especificada
+  --> caso seja encontrado algum erro, ele não será corrigido, apenas será alertado na tela
+
+fsck -f /dev/particao # ou /dev/disco
+  --> força a execução do fsck
+
+fsck -A
+  --> realiza o fsck em todos os discos disponíveis
+
+fsck -AR
+  --> semelhante ao fsck -A, porém ignora a partição que possui a raíz do sistema montada, para evitar qualquer tipo de problema.
+
+fsck -ARfV -t ext4 -y
+  --> A --> realiza o fsck em todos os filesystems
+  --> R --> ignora a partição que possui a raíz do sistema montada (/), para evitar qualquer tipo de problema durante a checagem
+  --> f --> força a checagem
+  --> V --> verboso
+  --> t --> especifica os filesystems que serão checados. No exemplo acima, apenas os sistemas de arquivo do tipo ext4 serão verificados
+  --> y --> caso seja encontrado algum problema, o fsck o corrigirá
+
+fsck -M /dev/particao
+  --> ignora a checagem nos discos montados, e.g. fsck -AM
+
+xfs_repair /dev/particao # ou /dev/disco
+  --> similar ao fsck, porém especificamente para sistemas de arquivo xfs
+  --> see `man xfs_repair`
+
+#
+# parâmetros boot loader
+#
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet fsck.mode=force fsck.repair=yes"
+  --> fsck.mode=force --> será feita a checagem dos discos em todo boot da máquina
+  --> fsck.repair=yes --> caso seja encontrado algum erro, será corrigido

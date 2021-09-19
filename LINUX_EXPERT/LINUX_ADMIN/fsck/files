@@ -1,0 +1,4 @@
+forcefsck
+  --> quando esse arquivo é criado em uma partição que possui um sistema de arquivo, será realizada a checagem forçada do fsck na partição que possui esse arquivo presente
+  --> é muito útil para partições que não podem ser desmontadas durante o uso da máquina, por exemplo, a partição raíz do sistema (/).
+  --> e.g. touch /forcefsck
