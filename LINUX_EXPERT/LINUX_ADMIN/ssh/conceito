@@ -1,0 +1,14 @@
+permite acessar equipamentos e máquinas remotamente, seja computadores, roteadores, equipamentos de comunicação e etc.
+
+opera totalmente em modo texto e toda sua conexão, do início ao fim é criptografada
+ótimo para links de baixa velocidade e extremamente seguro
+
+É uma evolução do telnet e do rsh. Tanto o telnet quanto o rsh são considerados serviços inseguros, por trafegar os dados totalmente em texto plano, diferentemente do ssh, que é completamente criptografado.
+
+nome do pacote: openssh-server
+
+fingerprint: associada com o host que acabou de ser instalado (sha256)
+  --> é importante que essa string seja sempre cadastrada. Ela ficará armazenada no host local (client) e será útil para validar caso esteja realmente conectando no host correto ou não.
+  --> essa string será cadastrada dentro da home do seu usuário em um diretório oculto chamado .ssh, em um arquivo chamado known_hosts (~/.ssh/known_hosts)
+
+informações dos arquivos de configuração em `LINUX_EXPERT/LINUX_ADMIN/securitty/files/etc/`

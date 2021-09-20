@@ -1,0 +1,2 @@
+ssh localhost
+  --> realiza a conexão ssh para o host local com o usuário conectado no momento

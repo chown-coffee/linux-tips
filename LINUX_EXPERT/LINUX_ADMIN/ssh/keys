@@ -1,0 +1,50 @@
+chaves públicas e privadas para acesso
+é considerado um acesso mais seguro, visto que não é autenticado por senha, mas sim por chaves geradas especificamente para essa conexão
+
+comandos:
+
+ssh-keygen
+  --> gera um par de chaves pública/privada no diretório .ssh na home do usuário, com o nome de id_rsa por padrão (~/.ssh/id_rsa)
+  --> serão gerados dois arquivos: id_rsa (representa a chave privada) e id_rsa.pub (representa a chave pública)
+
+ssh-keygen -t ed25519 -C "Comentário"
+  --> semelhante ao comando anterior, porém o par de hashs criadas é em ed25519, especificado pelo tipo `t`
+  --> esse tpo de hash é muito útil para conexões com sistemas IoT's e embarcados, pois nesses casos têm-se um processador menos potente
+  --> gera uma chave menor, porém se utilizando de um algorítmo de curva elíptica, garantindo uma alta segurança em sua geração, maior até que o próprio rsa
+
+###
+
+para utilizar as chaves criadas:
+
+ssh-copy-id usuario@ip
+  --> pedirá a confirmação do fingerprint e a senha para acesso a máquina (esse passo será realizado apenas uma vez)
+  --> após isso, ao digitar `ssh usuario@ip`, já será possível acessar a máquina remotamente sem nenhum problema.
+  --> caso continue sendo pedido a frase colocada na criação da chave, realize o seguinte passo:
+    --> $ eval `ssh-agent -s`
+    --> $ ssh-add
+    --> # coloque a frase da autenticação
+    --> # agora a chave será carregada na memória da máquina
+  --> chaves de autenticação são os métodos mais seguros conhecidos hoje, além de serem muito mais flexíveis para gerenciar um servidor
+  --> o processo manual para esse comando, seria:
+    $ scp -P 22 ~/.ssh/id_rsa.pub usuario@ip:/diretorio/de/destino
+    $ ssh -A `ip` -l usuario
+    $ cd ~/.ssh
+    $ cat /diretorio/de/destino/id_rsa.pub >> authorized_keys # adiciona a chave ao arquivo, mantendo as chaves já existentes
+
+ssh-add
+  --> carrega uma chave para a memória (através do ssh-agent)
+
+ssh-add -L
+  --> lista as chaves carregadas na memória atualmente
+
+ssh-add -D
+  --> deleta as chaves carregadas na memória
+
+ssh -i path/to/key usuario@ip
+  --> i --> pode-se especificar uma chave para a autenticação
+
+ssh -b 4096 -t rsa -C "comentário"
+  --> b --> especifica o tamanho do bloco que será gerado para a chave (por padrão é 2096)
+    --> quanto maior o bloco, maior a segurança, mas pode ter um certo impacto na performance do carregamento da chave
+  --> t --> especifica que tipo de chave será gerada
+  --> C --> permite colocar um comentário --> útil para identificar a data que foi criada a chave, por exemplo, assim como alguma característica/título

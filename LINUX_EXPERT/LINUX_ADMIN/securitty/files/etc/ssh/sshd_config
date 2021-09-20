@@ -13,9 +13,18 @@ AllowUsers root coffee
 	--> apenas usuários listados no AllowUsers poderam acessar a máquina
 	--> caso AllowUsers esteja comentado ou não esteja especificado, todos os usuários poderam se logar na máquina
 
+AllowGroups group
+  --> semelhante ao AllowUsers, porém com grupos
+
+DenyUsers guest
+  --> impede que os usuários listados entrem na máquina através de uma conexão ssh
+
+DenyGroups group
+  --> semelhante ao DenyUsers, porém com grupos
+
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication no
-	--> impede que usuários utilizem login e senha em texto plano para conexão
+	--> impede que usuários utilizem login e senha para conexão
 	--> será permitido apenas a utilização de chaves e certificados
 #PermitEmptyPasswords no
 
