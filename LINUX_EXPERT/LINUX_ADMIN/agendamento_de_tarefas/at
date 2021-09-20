@@ -1,0 +1,30 @@
+É um agendador de tarefas, similiar ao cron, porém não é algo periódico, mas sim algo a ser executado uma única vez
+
+at 18:00
+  --> cria-se uma tarefa para ser executada no horário especificado
+
+at 6:00 PM
+  --> similar ao comando acima
+
+at saturday +2 minutes
+  --> agenda uma tarefa para o sábado, 2 minutos a mais do horário atual
+
+at today + 1 hour -q L
+  --> agenda uma tarefa para hoje, daqui 1 hora e especifica uma fila (no caso L)
+
+at midnight
+  --> para a próxima meia noite, será executada uma tarefa
+
+atq
+  --> lista todos os processos criados
+
+atq -q B
+  --> lista todos os processos criados para a fila B
+
+atrm 1
+  --> deleta o primeiro processo na queue (fila)
+  --> é possível ver o número de cada processo pelo comando atq
+
+at -b # ou batch
+  --> serve para executar tarefas quando o loadaverage da máquina for menor que 1.5
+  --> útil para não executar tarefas quando a máquina estiver sobrecarregada

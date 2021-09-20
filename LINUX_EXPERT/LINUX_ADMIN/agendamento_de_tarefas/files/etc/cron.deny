@@ -1,0 +1,1 @@
+representa o oposto do cron.allow, todos os usuários presentes nesse arquivo não podem realizar a criação/agendamento de tarefas.

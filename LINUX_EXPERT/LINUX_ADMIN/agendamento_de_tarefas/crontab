@@ -1,0 +1,13 @@
+agendador de tarefas baseado em uma rotina
+
+crontab -l
+  --> lista todas as crontabs existentes para o usuário logado
+  --> `-u user` pode especificar um usuário
+
+crontab -e
+  --> adiciona uma crontab
+  --> olhe o arquivo `sintaxe-crontab`
+
+crontab -r
+  --> remove a crontab do usuário logado
+  --> `-u user` pode especificar um usuário

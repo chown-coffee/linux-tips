@@ -1,0 +1,20 @@
+# minutos - horas - dia  - mes  - dia da semana         - comando
+# 0-59    - 0-23  - 1-31 - 1-12 - 0-7 (domingo = 0 e 7) - comando
+
+# */15      19      *      9      0                       echo "hoje é domingo porra"
+
+# o comando acima será executado a cada 15 minutos
+# quando a hora estiver em 19 (07 PM)
+# seja qualquer dia do mês
+# apenas no mês de setembro
+# apenas no domingo
+# executando o comando $(echo "hoje é domingo porra")
+
+# */20      8-18    *      1,4,7  1-6                     echo "hoje não é domingo porra"
+
+# o comando acima será executado a cada 20 minutos
+# entre as 8 e 18 horas
+# seja qualquer dia do mês
+# apenas nos meses 1 (janeiro), 4 (abril) e 7 (julho)
+# de segunda à sábado
+# executando o comando $(echo "hoje não é domingo porra")

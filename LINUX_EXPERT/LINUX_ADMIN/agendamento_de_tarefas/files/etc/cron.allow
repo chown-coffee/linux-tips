@@ -1,0 +1,2 @@
+arquivo que contém usuários que podem criar/agendar tarefas
+todos os usuários presentes nesse arquivo tem permissão para tal, porém os usuários que não estão presentes nesse arquivo, não possuem essa permissão
