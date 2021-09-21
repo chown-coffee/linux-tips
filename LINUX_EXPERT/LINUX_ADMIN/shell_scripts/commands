@@ -1,0 +1,5 @@
+bash -x arquivo
+  --> executa o bash em modo debug (-x), mostrando todos os comandos executados no script
+
+set
+  --> mostra as variáveis de ambiente
