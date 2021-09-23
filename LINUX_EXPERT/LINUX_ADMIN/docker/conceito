@@ -1,0 +1,11 @@
+see `CONTAINER/DOCKER`
+
+docker container inspect --format "{{ .NetworkSettings.IPAddress }}" container
+  --> retorna o endereço de IP da imagem docker
+  --> outros campos também funcionam
+
+docker container top container
+  --> verifica os processos rodando dentro do container
+
+docker system prune
+  --> realiza um prune nos containers, nas imagens, nas redes não usadas e de caches de reconstrução das imagens com problemas de dependências
