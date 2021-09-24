@@ -1,0 +1,24 @@
+MUA --> mail user agent # email client
+
+MSA --> mail submition agent # checa se a mensagem está correta, antes de enviar para o MTA. Não está presente em todos os serviços de email, porém é muito comum hoje em dia
+
+MTA --> mail transfer agent # realiza a transferência do email
+  # e.g. postfix, qmail, sendmail, exim
+
+MDA --> mail delivery agent # realiza a entrega do email (e.g. dovecot)
+
+MX  --> mail exchanger (e.g. gmail.com)
+
+SMTP --> protocolo de comunicação do serviço de email, responsável por fazer o envio
+  --> funciona na porta 25 sem autenticação
+  --> funciona na porta 587 com encriptação TLS
+
+POP3 --> protocolo de comunicação do serviço de email, responsável por realizar o recebimento da mensagem
+  --> é um protocolo mais antigo
+  --> não deixava cópia no servidor (não havia o sync)
+  --> funciona na porta 110 sem criptografia
+  --> funciona na porta 995 com criptografia
+
+IMAP --> semelhante ao POP3, porém possui o sync. Existe uma cópia da mensagem no servidor, inclusive um status dela
+  --> funciona na porta 143 sem criptografia
+  --> funciona na porta 993 com criptografia
