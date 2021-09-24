@@ -1,0 +1,163 @@
+baseado no X86, é utilizado para utilização de interfaces gráficas no ambiente linux
+
+pacotes (debian):
+* xinit
+* xbase-clients
+* xserver-xorg-core
+* x11-apps
+* xserver-xorg-video-all
+
+troca de window managers (debian):
+update-alternatives --config x-window-manager # e seleciona a window manager desejada
+caso o /etc/alternatives/x-session-manager ainda esteja apontando para outra window manager, pode ser que a window manager que será aberta não seja a correta. Para corrigir, pode-se excluir o x-session-manager ou realizar um `update-alternatives --config x-session-manager`
+
+iniciar o ambiente gráfico:
+startx
+
+------ --------
+WINDOW MANAGERS
+------ --------
+
+* window maker:
+  ** pacotes: wmaker wmaker-data wmifs
+
+* twm:
+  ** pacotes: twm
+
+* icewm
+  ** pacotes: icewm
+
+* afterstep
+  ** pacotes: afterstep
+
+* xfce
+  ** pacotes: xfce4
+
+* lxde
+  ** pacotes: lxde
+
+------- --------
+DISPLAY MANAGER 
+------- --------
+
+lightdm: leve e brabo :)
+
+gdm: gnome display manager :|
+
+sddm: kde :|
+
+trocar display manager padrão (debian):
+dpkg-reconfigure display_manager
+
+-------
+DESKTOP :/
+-------
+
+* gnome:
+  ** pacotes:
+    *** opção 1: gnome (bloated)
+    *** opção 2: task-gnome-desktop (lighter)
+
+* kde:
+  ** pacotes: task-kde-desktop
+
+--------
+COMANDOS
+--------
+
+tasksel
+  --> abre opções de GUI's para serem instalados
+
+chvt [número do tty]
+  --> altera o tty na máquina virtual
+  --> semelhante a: ctrl + alt + [número do tty]
+  --> e.g. `chvt 7`
+
+--------
+ARQUIVOS
+--------
+
+/etc/X11
+  --> diretório de configuração do ambiente X11
+
+xorg.conf
+  --> arquivo de configuração do xorg
+  --> muitas vezes não é criado por padrão, porém pode ser criado manualmente
+  --> pode ser utilizado para forção a utilização de um driver, por exemplo, pra aceleração e otimização de uso (recursos de aceleração) de uma placa de vídeo, por exemplo.
+  --> exemplo de criação de uma sessão (placa de vídeo intel):
+  #
+  # Section "Device"
+  #   Identifier "Intel"
+  #   Driver "intel"
+  #   Option "AccelMethod" "uxa"
+  # EndSection
+  #
+
+---
+LOG (debian)
+---
+
+/etc/X11/Xorg.0.log
+
+~/.xsession-errors
+  --> todos os erros durante uma sessão do X11
+    --> ou erros de aplicativos dentro do X11
+
+-------
+DISPLAY
+-------
+
+echo $DISPLAY
+  --> mostra o display sendo utilizado
+
+ssh -X ip
+  --> a opção -X faz um túnel de tudo o que for executado na aplicação remota e trás pra display local
+  --> ou seja, é possível executar uma aplicação remotamente e a imagem aparecer localmente
+
+xdmcp # utilizado em LTSP, por exemplo
+  --> permite que se conect um display manager local em um servidor X remoto
+  --> assim, todos os aplicativos rodam remotamente, consumindo pouco recurso da máquina local, porém mostrando a imagem localmente
+
+vnc # package: x11vnc
+  --> commands:
+    * x11vnc # realiza o carregamento do vnc, esperando o acesso remoto
+    * x11vnc --storepasswd # armazena uma senha para ser utilizada no acesso
+    * x11vnc --rfbauth ~/.vnc/passwd # semelhante ao primeiro comando, porém agora espera-se a senha armazenada no comando acima
+  --> clients:
+    * xtightvncviewer # leve, bom
+    * remmina # mais completo
+
+terminal services # package: xrdp
+  --> systemctl start xrdp # se necessário
+  --> o serviço roda na porta 3389 # e.g. `netstat -lnp|grep 3389`
+  --> configuração:
+    * /etc/xrdp
+      ** xrdp.ini
+  --> client: rdesktop
+    * rdesktop ip
+      --> realiza a conexão remota para o xrdp
+
+------
+FONTES
+------
+
+fc-list
+  --> lista as fontes disponíveis no sistema
+
+------ --------
+EXTRAS PACKAGES
+------ --------
+
+imagemagick
+  --> conversão entre formatos de imagem em modo texto
+
+---- - ------
+KILL X SERVER
+---- - ------
+
+modo antigo: 
+  --> Ctrl + Alt + Backspace
+  --> para que funcione deve ser habilitado: (debian) `dpkg-reconfigure keyboard-configuration`
+
+modo novo:
+  --> AltDir + SysRq(PrtSc) + k
