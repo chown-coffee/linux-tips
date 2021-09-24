@@ -10,7 +10,7 @@ docker container ls -a
 ps -ef
 		* lista todos os processos do container
 
-docker container run -ti [nome da imatem]
+docker container run -ti [nome da imagem]
 		* verifica primeiramente se o container descrito existe na máquina.
 		* caso o container exita, ele será iniciado
 		* caso o container não exista, será feito um PULL (o container será baixado) e logo depois será iniciado
@@ -19,7 +19,7 @@ docker container run -ti [nome da imatem]
 		* o comando "ctrl + p + q" sairá do bash da imagem no container, mas não a finalizará, ou seja, o container continuará ativo.
 
 docker container create [nome da imagem]
-		* cria um novo container, mas não o coloca em execućão, diferente do "docker container run [nome da imagem]"
+		* cria um novo container, mas não o coloca em execução, diferente do "docker container run [nome da imagem]"
 
 docker container run -d [nome da imagem]
 		* funciona de maneira parecida com o comando aterior, porém a imagem aqui, será iniciada em segundo plano, graćas a flag -d.
