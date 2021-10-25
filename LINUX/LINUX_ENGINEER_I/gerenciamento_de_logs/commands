@@ -1,0 +1,73 @@
+top
+  --> ferramenta de monitoramento de cpu, memória, interrupções e etc.
+
+iotop
+  --> ferramenta de monitoramentos de processos que estão executando io no disco
+
+irqtop
+  --> ferramento de monitoramento de interrupções na máquina
+  --> em máquinas com acesso de rede muito grande, pode ser interessante realizar esse monitoramento
+
+stress
+  --> ferramenta para simular um estresse na máquina
+  --> e.g. `stress --cpu 4 --timeout 300s`
+    * simula um estresse utilizando-se de 4 cpu's, com tempo máximo de 300s
+      e.g. `stress --io 20 --timeout 300s`
+    * simula um estresse na máquina utilizando-se de io's (entradas e saídas)
+      e.g. `stress -m 200 --timeout 300s`
+    * simula um estresse utilizando-se de 200 megas de memória
+      --> para quando é verificado um uso extraordinário de memória, que excede as capacidades da máquina, ou mesmo um processo com um uso demasiado de memória, existe uma proteção do kernel chamada OOMKiller (Out of Memory Killer)
+
+vmstat
+  --> é possível ver o número de processos que estão sendo executados, o número de processos aguardando execução, uso de memória, uso de swap, io, interrupções e cpu
+  --> e.g. `vmstat 1`
+    * mostra o vmstat a cada 1 segundo
+
+ifstat
+  --> exibe os dados em tempo real de entrada e saída em cada interface de rede
+  --> por padrão mostra em KBytes
+  --> com `ifstat -b` mostra em kbits
+  --> por padrão, são exibidas todas as interfaces de rede, com exceção da loopback
+
+ifstat -b -i enp0s3 # ifstat -b -i enp0s3,lo --> para especificar mais de uma interface
+  --> -i --> especifica uma interface de rede para ser analizada, ao invés de ser uma análise de todas as interfaces de uma vez
+
+ip link ls
+  --> são mostradas as interfaces de rede
+
+ip -s link ls
+  --> são mostradas as estatísticas das interfaces (pacotes que estão entrando e saindo da interface)
+
+iperf
+  --> realiza testes de performance na rede
+  --> é possível verificar a quantidade de tráfego que é possível ser passada entre o ponto A e o ponto B de uma rede, além de verificar gargalos
+  --> funciona como `cliente/servidor`
+
+iperf -s
+  --> funciona como um servidor
+  --> escuta na porta 5001
+
+iperf -c IP
+  --> funciona como um cliente
+  --> realiza um teste de conexão com o servidor (IP) especificado
+
+iperf -c IP -t 60
+  --> -t --> especifica o tempo do teste em segundos
+
+smem
+  --> mostra os processos utilizados pelo usuário na máquina
+
+smem --sort swap
+  --> ordena os processos pelo uso de swap
+
+sysstat
+  --> realiza um monitoramento geral do sistema
+  --> ENBLED="true" nas configurações em `/etc/default/sysstat` para habilitar a ferramenta
+  --> ferramenta responsável por armazenar os monitoramentos realizados pelo sysstat: `sar`
+  --> arquivo de log: `/var/log/sysstat/sa06` # sa --> prefixo padrão # 06 --> dia do log
+  --> os logs são armazenados durante até um mês, até serem sobrescritos
+
+mrtg
+  --> realiza a montage e demonstração de gráficos para o sistema
+
+/var/log/kernel.log --> logs do kernel
