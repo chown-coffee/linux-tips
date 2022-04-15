@@ -68,6 +68,18 @@ sysstat
   --> os logs são armazenados durante até um mês, até serem sobrescritos
 
 mrtg
-  --> realiza a montage e demonstração de gráficos para o sistema
+  --> realiza a montagem e demonstração de gráficos para o sistema
+  --> diretório de configuração em /etc/mrtg.conf
+
+snmp
+smnpd
+  --> simple network management protocol
+  --> daemon
+
+bandwidthd
+  --> semelhante ao mrtg
 
 /var/log/kernel.log --> logs do kernel
+
+sar
+  --> ferramenta para verificação de logs pós incidente
